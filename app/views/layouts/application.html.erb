@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pokemonsimulator</title>
+    <title>PokemonMiniProject</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="nav_container">
+      <div class="nav_category nav_logo">
+        <%= link_to image_tag("logo.png"), "/" %>
+      </div>
+      <div class="nav_category trainer_hover">
+        <%= (link_to "Sign up", "#") %>
+      </div>
+      <div class="nav_category new_trainer_hover">
+         <%= (link_to "Log in", "#") %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
+
+<!-- 
+
+      <div class="nav_category nav_logo">
+        < % = link_to image_tag("logo.png"), "/" %>
+      </div>
+      <div class="nav_category trainer_hover">
+        < % = (link_to "Show Trainers", trainers _path) %>
+      </div>
+      <div class="nav_category new_trainer_hover">
+         < % = (link_to "New Trainer", new_trainer _path) %>
+      </div>
+      <div class="nav_category team_hover">
+        < % = (link_to "New Team", new_team _path) %>
+      </div>
+      <div class="nav_category pokemon_hover">
+        < % = (link_to "New Pokemon", new_pokemon _path) %>
+      </div>
+
+
+
+-->

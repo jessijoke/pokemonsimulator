@@ -13,3 +13,143 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #ededed;
+    background: repeating-linear-gradient(
+    45deg,
+    #ededed,
+    #ededed 30px,
+    #d3d3d3 30px,
+    #d3d3d3 60px
+    );
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
+
+ .nav_category {
+    display: inline-block;
+}
+
+.trainer_menu {
+    display: block;
+}
+
+.nav_container {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 3px 2px -2px rgba(0,0,0,0.1);
+}
+
+.nav_container a {
+    font-family: 'Luckiest Guy', cursive;
+    color: #3c57a9;
+    text-decoration: none;
+}
+
+.nav_container a:hover {
+    color: #fdcd00;
+}
+
+.nav_logo img {
+    margin: 10px 0px 10px 0px;
+    height: 60px;
+    width: auto;
+}
+
+.index_image {
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("dawnandpokemon2.png");
+    background-size: cover;
+    background-position: left center;
+}
+
+.index_title {
+    font-family: 'Luckiest Guy', cursive;
+    color: #fdcd00;
+}
+
+.index_copy {
+    position: fixed;
+    right: 3%;
+    top: 30%;
+    width: 30%;
+    background-color: rgb(60, 87, 169, 1);
+    padding: 20px 20px 20px 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.index_body_copy {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.page_title {
+    background-color: white;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+    font-family: 'Luckiest Guy', cursive;
+    color:  rgb(60, 87, 169, 1);
+    box-shadow: 0 3px 2px -2px rgba(0,0,0,0.1);
+}
+
+.page_content {
+    background-color: white;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+    font-family: 'Luckiest Guy', cursive;
+    color:  rgb(60, 87, 169, 1);
+    box-shadow: 0 3px 2px -2px rgba(0,0,0,0.1);
+}
+
+.trainer_link_text a {
+    color: black;
+    text-decoration: none;
+    font-family: helvetica;
+    font-weight: 800;
+}
+
+.edit_link_text a {
+    color: #fdcd00;
+    text-decoration: none;
+    font-family: helvetica;
+    font-weight: 800;
+}
+
+.button {
+    background-color: #fdcd00; /* Green */
+    border: none;
+    color: #3c57a9;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: 10px;
+  }
+
+  .sign_up_index_btn {
+      background-color: #fdcd00;
+      padding: 10px;
+  }
+
+  .divider {
+      padding-bottom: 5px;
+  }
