@@ -10,21 +10,32 @@
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap" rel="stylesheet">
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="nav_container">
+    <div class="nav_container" id="nav_logged_out">
       <div class="nav_category nav_logo">
         <%= link_to image_tag("logo.png"), "/" %>
       </div>
-      <div class="nav_category trainer_hover">
-        <%= (link_to "Sign up", "#") %>
+      <div class="login_sign">
+        <div class="nav_category sign_up_login">
+          <%= (link_to "Sign up", "#") %>
+        </div>
+        <div class="nav_category sign_up_login">
+          <%= (link_to "Log in", "#") %>
+        </div>
       </div>
-      <div class="nav_category new_trainer_hover">
-         <%= (link_to "Log in", "#") %>
-      </div>
+    </div>
+    <div class="nav-divider">
+      <div class="nav-divider-inner nav-divider-red"></div>
+      <div class="nav-divider-inner nav-divider-yellow"></div>
+      <div class="nav-divider-inner nav-divider-green"></div>
+      <div class="nav-divider-inner nav-divider-aqua"></div>
+      <div class="nav-divider-inner nav-divider-blue"></div>
     </div>
     <%= yield %>
   </body>
