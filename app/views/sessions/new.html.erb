@@ -1,14 +1,26 @@
-<h1>Sign Up</h1>
+<div class="signup_login_container">
+    <div class="signup_login_form">
+        <h1>Log In</h1>
 
-<%= form_with model: @user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+        <div class="signup_login_form_container">
+            <%= form_for @user, url: login_path, method: :post do |f| %>
+                <div class="signup_login_field">
+                    <%= f.label :name %>
+                    <%= f.text_field :name, class: 'signup-login-input' %>
+                </div>
+                <div class="signup_login_field">
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: 'signup-login-input' %>
+                </div>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+                <div class="signup_login_submit_btn">
+                    <%= f.submit "log in" %>
+                </div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+                    Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+            <% end %>
+            </div>
 
-    <%= f.submit %>
-<% end %>
+    </div>
+    <div class="signup_login_image"></div>
+</div>

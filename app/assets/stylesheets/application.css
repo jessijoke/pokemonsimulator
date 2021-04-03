@@ -129,6 +129,7 @@
     overflow: hidden;
     display: flex;
     width: 100%;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     margin-right: 5px;
@@ -151,6 +152,7 @@
     background-color: #0045A9;
     object-fit: contain;
     object-position: center;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .legendary-pokemon-frame-description h1 {
@@ -162,18 +164,64 @@
 
 .legendary-pokemon-frame-description p {
     font-family: sans-serif;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px 10px 0px;
     font-weight: light;
     font-size: 14px;
     letter-spacing: 2px;
 }
 
-.site-description-frame {
-    padding-left: 5px;
-    grid-area: 2 / 3;
-    grid-row: 1 / 2;
+.legendary-pokemon-image-tag {
+    font-family: 'Exo 2', sans-serif;
+    color: white;
+    border-style: solid;
+    border-width: 3px, 3px, 3px, 0;
+    border-left: 0px;
+    border-color: #FCCE00;
+    font-size: 20px;
+    position: absolute;
+    background-color: #EA151A;
+    padding: 10px 20px 10px 10px;
+    border-radius: 0px 15px 15px 0px;
 }
 
+.sign_up_btn {
+    background-color: #FCCE00;
+    max-width: 300px;
+    color: black;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    padding: 10px 0px 10px 10px;
+    margin-bottom: 20px;
+}
+
+
+.site-description-frame-image {
+    height: 80%;
+    background-image: url("mew.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.site-description-frame-description {
+    background-color: #21B8FF;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+    min-height: 20%;
+}
+
+.site-description-frame {
+    margin-left: 5px;
+    grid-area: 2 / 3;
+    grid-row: 1 / 2;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
 
 .index_title {
     font-family: 'Luckiest Guy', cursive;
@@ -254,4 +302,91 @@
 
   .divider {
       padding-bottom: 5px;
+  }
+
+  .signup_login_container {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 100%;
+      margin: 10px 10% 10px 10%;
+  }
+
+  .signup_login_form {
+      background-color: #50ac38;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  .signup_login_form h1 {
+      display: block;
+      margin: 0px;
+      width: 100%;
+      padding: 30px 0px 15px 0px;
+      text-align: center;
+      background-color: #18269b;
+      font-family: 'Luckiest Guy', cursive;
+      letter-spacing: 3px;
+      color: white;
+  }
+
+  .signup_login_image {
+      background-color: white;
+      background-image: url("signup-login-pikachu.png");
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+
+  .signup_login_form_container {
+      margin: 10px 0px 20px 0px;
+      width: 100%;
+  }
+
+  .signup_login_field {
+    margin-top: 10px;
+    padding: 0px 20px 0px 20px;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+  }
+
+  .signup-login-input {
+      width: 100%;
+      border-style: none;
+      height: 30px;
+      border-radius: 3px;
+      margin-top: 5px;
+  }
+
+  .signup_login_submit_btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 0px 20px 0px 20px;
+  }
+
+  .signup_login_submit_btn input {
+      margin: 0;
+      padding: 0;
+      padding-top: 5px;
+      width: 90%;
+      border-radius: 5px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      height: 40px;
+      border-style: none;
+      color: #18269b;
+      background-color: #f3cc00;
+      font-family: 'Luckiest Guy', cursive;
+  }
+
+  .facebook_submit input {
+      background-color: #3B5998;
+      color: white;
+  }
+
+  .google_submit input {
+      background-color: white;
+      color: #dd0023;
   }

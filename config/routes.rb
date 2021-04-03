@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
+  post '/logout' => 'sessions#destroy'
   get 'welcome', to: 'sessions#welcome'
   resources :users, only: [:new, :create]
   root to: 'pages#index'

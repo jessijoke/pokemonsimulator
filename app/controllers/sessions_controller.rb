@@ -1,13 +1,24 @@
 class SessionsController < ApplicationController
-  def create
-  end
-
   def new
   end
 
-  def login
+  def create
+    user = User.find_by(name: params[:user][:name])
+
+    user = user.try(:authenticate, params[:user][:password])
+
+    return redirect_to(controller: 'sessions', action: 'new') unless user
+
+    session[:user_id] = user.id
+
+    @user = user
+
+    redirect_to controller: 'pages', action: 'index'
   end
 
-  def welcome
+  def destroy
+    session.delete :user_id
+
+    redirect_to '/'
   end
 end
