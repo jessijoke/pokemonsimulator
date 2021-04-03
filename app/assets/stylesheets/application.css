@@ -318,6 +318,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      border-radius: 10px 0px 0px 10px;
   }
 
   .signup_login_form h1 {
@@ -330,6 +331,7 @@
       font-family: 'Luckiest Guy', cursive;
       letter-spacing: 3px;
       color: white;
+      border-radius: 10px 0px 0px 0px;
   }
 
   .signup_login_image {
@@ -338,6 +340,20 @@
       background-position: bottom right;
       background-repeat: no-repeat;
       background-size: contain;
+      border-radius: 0px 10px 10px 0px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Luckiest Guy', cursive;
+      color: #46abff;
+      font-size: 25px;
+      letter-spacing: 3px;
+  }
+
+  .signup_login_image p {
+    padding: 0px 20px 0px 20px;
+    margin-top: -35%;
   }
 
   .signup_login_form_container {
@@ -352,6 +368,10 @@
     font-family: 'Exo 2', sans-serif;
   }
 
+  .create_button_container {
+      text-align: center;
+  }
+
   .signup-login-input {
       width: 100%;
       border-style: none;
@@ -363,16 +383,15 @@
   .signup_login_submit_btn {
       width: 100%;
       margin-top: 20px;
-      padding: 0px 20px 0px 20px;
   }
 
   .signup_login_submit_btn input {
-      margin: 0;
+      margin-left: -20;
       padding: 0;
       padding-top: 5px;
-      width: 90%;
+      width: 80%;
       border-radius: 5px;
-      font-size: 20px;
+      font-size: 15px;
       letter-spacing: 2px;
       height: 40px;
       border-style: none;
@@ -389,4 +408,19 @@
   .google_submit input {
       background-color: white;
       color: #dd0023;
+  }
+
+  .or_sign_up {
+      margin-top: 10px;
+      text-align: center;
+  }
+
+  .user_info {
+      color: #3c57a9;
+      font-family: sans-serif;
+  }
+
+  .login_signup_errors {
+      text-align: center;
+      font-family: 'Exo 2', sans-serif;
   }

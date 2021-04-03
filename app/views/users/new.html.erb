@@ -3,6 +3,11 @@
         <h1>Sign Up</h1>
 
         <div class="signup_login_form_container">
+
+        <% if flash[:messages] %>
+            <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
+        <% end %>
+
         <%= form_for @user, controller: 'users', action: 'create' do |f| %>
             <div class="signup_login_field">
                 <%= f.label "Name:" %><br />
@@ -24,21 +29,25 @@
                 <%= f.password_field :password_confirmation, class: 'signup-login-input' %>
             </div>
 
-            <div class="signup_login_submit_btn">
-                <%= f.submit "Create New Account" %>
-            </div>
+            <div class="create_button_container">
+                <div class="signup_login_submit_btn">
+                    <%= f.submit "Submit" %>
+                </div>
 
-            <div class="signup_login_submit_btn facebook_submit">
-                <%= f.submit "Create with Facebook" %>
-            </div>
+                <div class="signup_login_submit_btn facebook_submit">
+                    <%= f.submit "Create with Facebook" %>
+                </div>
 
-            <div class="signup_login_submit_btn google_submit">
-                <%= f.submit "Create with Google" %>
+                <div class="signup_login_submit_btn google_submit">
+                    <%= f.submit "Create with Google" %>
+                </div>
             </div>
         
         <% end %>
         </div>
 
     </div>
-    <div class="signup_login_image"></div>
+    <div class="signup_login_image">
+        <p>"Signing up is the best decision you will ever make. I don't know how I lived before this site existed." <br/> ~Todd Lee Lejit</p>
+    </div>
 </div>
