@@ -1,14 +1,12 @@
 class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :omniauth
 
-
-
   def new
     @user = User.new
   end
 
   def create
-    user = User.find_by(name: params[:user][:name])
+    user = User.find_by(email: params[:user][:email])
 
     user = user.try(:authenticate, params[:user][:password])
 
@@ -25,22 +23,24 @@ class SessionsController < ApplicationController
   end
 
   def omniauth
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.name = auth['info']['name']
-      u.email = auth['info']['email']
-      u.password = SecureRandom.hex(20)
-    end
+    @user = User.from_omniauth(auth)
     if @user.valid?
       session[:user_id] = @user.id
       redirect_to controller: 'pages', action: 'index'
     else
       render :new
     end
-
-    
-
-    
-    #render 'welcome/home'
+    # @user = User.find_or_create_by(uid: auth['uid']) do |u|
+    #   u.name = auth['info']['name']
+    #   u.email = auth['info']['email']
+    #   u.password = SecureRandom.hex(20)
+    # end
+    # if @user.valid?
+    #   session[:user_id] = @user.id
+    #   redirect_to controller: 'pages', action: 'index'
+    # else
+    #   render :new
+    # end
   end
 
   def destroy

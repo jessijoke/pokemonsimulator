@@ -7,6 +7,10 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load
 
+require 'net/http'
+require 'open-uri'
+require 'json'
+
 module Pokemonsimulator
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

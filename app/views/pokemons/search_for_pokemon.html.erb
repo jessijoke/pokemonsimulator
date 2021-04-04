@@ -1,0 +1,16 @@
+<div class="capture_pokemon_content">
+    <div class="capture_pokemon_container">
+        <%= image_tag(@pokemon_sprite) %>
+        <div class="capture_pokemon_title">
+            Species: <%= @pokemon_species.capitalize %>
+        </div>
+        <div class="capture_pokemon_info">
+            <span>Type: <%= @pokemon_type.capitalize %></span>
+        </div>
+        <div class="capture_pokemon_level">
+            <span>Level: <%= @pokemon_level %></span>
+        </div>
+    </div>
+    <%= link_to "Attempt Capture", "/" %><br />
+    <%= link_to "Continue Searching", pokemons_catch_path %>
+</div>

@@ -1,6 +1,15 @@
 class User < ApplicationRecord
     has_secure_password
     validates :password, confirmation: true
-    validates :name, presence: true, :uniqueness => {:scope => :name}
+    validates :name, presence: true
     validates :email, presence: true, :uniqueness => {:scope => :email}
+
+    def self.from_omniauth(auth)
+        self.find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |u|
+            u.email = auth['info']['email']
+            u.password = SecureRandom.hex(20)
+            u.name = auth['info']['name'].downcase.gsub(" ", "_")
+            u.money = 5000
+          end
+    end
 end
