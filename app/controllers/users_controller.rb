@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
+    skip_before_action :verify_authenticity_token, only: :create
+
     def new
     end
   
     def create
       @user = User.create(user_params)
       if @user.valid?
+        @user.money = 5000
         @user.save
         session[:user_id] = @user.id
         redirect_to controller: 'pages', action: 'index'

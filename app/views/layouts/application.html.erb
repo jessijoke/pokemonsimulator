@@ -37,7 +37,7 @@
           <%= link_to image_tag("logo.png"), "/" %>
         </div>
          <div class="nav_category sign_up_login user_info">
-            <%= @user.name.capitalize %>: $0
+            <%= @user.name.capitalize %>: $<%= @user.money %>
         </div>
         <div class="nav_category sign_up_login">
             <%= (link_to "Catch Pokémon", '/') %>
