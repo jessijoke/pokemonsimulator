@@ -8,8 +8,8 @@
         <% end %>
             <%= form_for @user, url: login_path, method: :post do |f| %>
                 <div class="signup_login_field">
-                    <%= f.label :name %>
-                    <%= f.text_field :name, class: 'signup-login-input' %>
+                    <%= f.label :email %>
+                    <%= f.text_field :email, class: 'signup-login-input' %>
                 </div>
                 <div class="signup_login_field">
                     <%= f.label :password %>
@@ -22,11 +22,11 @@
                     </div>
 
                     <div class="signup_login_submit_btn facebook_submit">
-                        <%= f.submit "Sign in with Facebook" %>
+                        <%= button_to('Create with Facebook', '/auth/facebook') %> 
                     </div>
 
                     <div class="signup_login_submit_btn google_submit">
-                        <%= f.submit "Sign in with Google" %>
+                        <%= button_to('Create with Google', '/auth/google_oauth2') %> 
                     </div>
                 </div>
 

@@ -8,6 +8,7 @@ class Pokemonapi
     def info
         pokemon_info = @json
     end
+    
 end
 
 #private

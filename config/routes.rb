@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :user_items
+  resources :items
+  resources :teams
   root to: 'pages#index'
 
   #login
@@ -11,7 +14,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   #pokemon
-  get 'pokemons/catch' => 'pokemons#search_for_pokemon'
+  get 'pokemons/explore' => 'pokemons#search_for_pokemon'
+  get 'pokemons/capture' => 'pokemons#capture'
+  post 'pokemons/capture' => 'pokemons#capture'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

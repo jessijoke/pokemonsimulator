@@ -1,0 +1,16 @@
+<div class="capture_pokemon">
+
+   <%= params[:species] %>
+    <%= form_for @pokemon, url: pokemons_capture_path, method: :post do |f| %>
+        <div class="capture_pokemon_entry">
+
+            <%= f.label :nickname %>
+            <%= f.text_field :nickname, class: 'pokemon_nickname' %>
+        </div>
+
+        <div class="capture_pokemon_submit_container">
+            <%= f.submit "Capture Pokemon" %>
+        </div>
+    <% end %>
+
+</div>

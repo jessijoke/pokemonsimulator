@@ -10,5 +10,14 @@ class PokemonsController < ApplicationController
         @pokemon_type = @random_pokemon.info["types"][0]["type"]["name"]
     end
 
-     
+    def capture
+        @pokemon = Pokemon.find_or_create_by(:nickname => params[:nickname], :species => params[:species], :level => params[:level], :sprite => params[:sprite], :poke_type => params[:type], :user_id => current_user.id)
+        @pokemon.save
+    end
+
+    private
+
+    def pokemon_params
+        params.require(:pokemon).permit(:nickname, :species, :level, :sprite, :poke_type)
+    end
 end

@@ -11,6 +11,24 @@
             <span>Level: <%= @pokemon_level %></span>
         </div>
     </div>
-    <%= link_to "Attempt Capture", "/" %><br />
-    <%= link_to "Continue Searching", pokemons_catch_path %>
+    
+    <div id="throw_pokeball">Throw Pokeball</div>
+    <%= link_to "Continue Searching", pokemons_explore_path %>
 </div>
+
+<%= javascript_pack_tag 'pokemon' %>
+
+
+
+<!--
+    <%= form_with url: pokemons_capture_path, method: :get do |f| %>
+            <%= f.hidden_field :species, value: @pokemon_species %>
+            <%= f.hidden_field :sprite, value: @pokemon_sprite %>
+            <%= f.hidden_field :level, value: @pokemon_level %>
+            <%= f.hidden_field :type, value: @pokemon_type %>
+
+        <div class="capture_pokemon_submit_container">
+            <%= f.submit "Capture Pokemon" %>
+        </div>
+    <% end %>
+    -->

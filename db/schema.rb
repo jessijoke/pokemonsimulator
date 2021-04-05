@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_192011) do
+ActiveRecord::Schema.define(version: 2021_04_05_023408) do
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "sprite"
+    t.integer "cost"
+    t.integer "shop_id"
+    t.integer "user_item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pokemons", force: :cascade do |t|
     t.string "species"
@@ -18,9 +29,24 @@ ActiveRecord::Schema.define(version: 2021_04_04_192011) do
     t.integer "level"
     t.integer "experience"
     t.string "sprite"
-    t.string "type"
     t.integer "user_id"
     t.integer "pokemon_team_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "poke_type"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_items", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "item_id"
+    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

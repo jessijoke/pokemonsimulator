@@ -16,11 +16,6 @@ class UsersController < ApplicationController
         render controller: 'users', action: 'new'
         #redirect_to controller: 'users', action: 'new'
       end
-
-
-    #   return redirect_to controller: 'users', action: 'new' unless @user.save
-    #   session[:user_id] = @user.id
-    #   redirect_to controller: 'pages', action: 'index'
     end
   
     private
