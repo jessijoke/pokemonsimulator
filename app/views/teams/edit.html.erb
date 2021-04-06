@@ -1,0 +1,26 @@
+<%= render :partial => "teams/pokemonlayout" %>
+
+
+<div class="page_title">
+    <h1 class="h1_title">
+        Edit <%= @team.name %>
+    </h1>
+</div>
+
+<div class="page_content">
+
+    <%= form_for @team do |f| %>
+    <div class="divider">
+    <%= f.label 'Team Name:', :class => "form_label" %><br>
+    <%= f.text_field :name %><br>
+    </div>
+
+    <div class="divider">
+    <%= f.label 'Trainer ID:', :class => "form_label" %><br>
+    <%= f.number_field :trainer_id %><br>
+    </div>
+
+    <%= f.submit "Update Team", :class => "button"  %>
+    <% end %> 
+
+ </div>

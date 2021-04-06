@@ -1,0 +1,20 @@
+<%= render :partial => "teams/pokemonlayout" %>
+
+<div class="page_title">
+    <h1 class="h1_title">
+        New Team
+    </h1>
+</div>
+
+<div class="page_content">
+
+    <div class="divider">    </div>
+
+        <%= form_tag teams_path do %>
+            <label class="form_label">Team Name:</label><br>
+            <%= text_field_tag :nickname %><br>
+
+            <%= submit_tag "Add Team", :class => "button" %>
+        <% end %>
+
+ </div>

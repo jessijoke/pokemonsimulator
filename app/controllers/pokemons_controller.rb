@@ -5,6 +5,10 @@ class PokemonsController < ApplicationController
         @pokemon = Pokemon.new
     end
 
+    def index
+        @pokemons = current_user.pokemons.all
+    end
+
     def create
         new_pokemon = Pokemonapi.new(params[:species])
         @pokemon = Pokemon.create(:species => new_pokemon.info["name"], :nickname => params[:name], :poke_type => new_pokemon.info["types"][0]["type"]["name"], :level => 1, :sprite => new_pokemon.info["sprites"]["front_default"], :user_id => current_user.id)
