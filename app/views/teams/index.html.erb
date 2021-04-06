@@ -1,1 +1,5 @@
 <%= render :partial => "teams/pokemonlayout" %>
+
+<% @teams.each do |team| %>
+    <%= link_to(team.nickname, team_path(team)) %>
+<% end %>

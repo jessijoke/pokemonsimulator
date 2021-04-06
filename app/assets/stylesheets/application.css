@@ -425,7 +425,17 @@
       font-family: 'Exo 2', sans-serif;
   }
 
-
+.capture_pokemon_content {
+    height: 500px;
+    background-image: url("game-boy-advance.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 

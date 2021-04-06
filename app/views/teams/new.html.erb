@@ -10,11 +10,11 @@
 
     <div class="divider">    </div>
 
-        <%= form_tag teams_path do %>
-            <label class="form_label">Team Name:</label><br>
-            <%= text_field_tag :nickname %><br>
+        <%= form_with url: teams_path do |f| %>
+            <%= f.label "Team Name:" %>
+            <%= f.text_field :nickname %>
 
-            <%= submit_tag "Add Team", :class => "button" %>
+            <%= f.submit "Add Team" %>
         <% end %>
 
  </div>

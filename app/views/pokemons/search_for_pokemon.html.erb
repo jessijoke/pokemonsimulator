@@ -12,7 +12,10 @@
         </div>
     </div>
     
-    <button id="throwpokeball">Throw Pokeball</button>
+    
+</div>
+
+<button id="throwpokeball">Throw Pokeball</button>
     <div id="failedcapture">
         Oh no! The Pokemon broke free! <br />Throw another Pokeball or search for another Pokemon.
     </div>
@@ -37,17 +40,3 @@
     </div><br />
 
     <%= link_to "Continue Searching", pokemons_explore_path %>
-</div>
-
-<!--
-    <%= form_with url: pokemons_capture_path, method: :get do |f| %>
-            <%= f.hidden_field :species, value: @pokemon_species %>
-            <%= f.hidden_field :sprite, value: @pokemon_sprite %>
-            <%= f.hidden_field :level, value: @pokemon_level %>
-            <%= f.hidden_field :type, value: @pokemon_type %>
-
-        <div class="capture_pokemon_submit_container">
-            <%= f.submit "Capture Pokemon" %>
-        </div>
-    <% end %>
-    -->
