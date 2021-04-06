@@ -1,0 +1,21 @@
+<% if flash[:messages] %>
+        <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
+<% end %>
+
+<%= form_with url: pokemons_path do |f| %>
+
+        <div class="capture_pokemon_entry">
+
+            <%= f.label "Name of Pokemon" %>
+            <%= f.text_field :species %>
+        </div>
+
+        <div class="capture_pokemon_entry">
+            <%= f.label "Pokemon Nickname" %>
+            <%= f.text_field :name %>
+        </div>
+
+        <div class="capture_pokemon_submit_container">
+            <%= f.submit "Create Pokemon" %>
+        </div>
+<% end %>

@@ -1,18 +1,45 @@
 class PokemonsController < ApplicationController
     before_action :require_logged_in
 
+    def new
+        @pokemon = Pokemon.new
+    end
+
+    def create
+        new_pokemon = Pokemonapi.new(params[:species])
+        @pokemon = Pokemon.create(:species => new_pokemon.info["name"], :nickname => params[:name], :poke_type => new_pokemon.info["types"][0]["type"]["name"], :level => 1, :sprite => new_pokemon.info["sprites"]["front_default"], :user_id => current_user.id)
+        if @pokemon.valid?
+            @pokemon.save
+            redirect_to pokemon_path(@pokemon)
+        else
+            flash.now[:messages] = "Please enter a valid Pokemon name."
+            render :new
+        end
+        
+    end
+
+    def show
+        @pokemon = Pokemon.find(params[:id])
+    end
 
     def search_for_pokemon
-        @random_pokemon = Pokemonapi.new(rand(1..898))
-        @pokemon_species = @random_pokemon.info["name"]
-        @pokemon_level = rand(1..20)
-        @pokemon_sprite = @random_pokemon.info["sprites"]["front_default"]
-        @pokemon_type = @random_pokemon.info["types"][0]["type"]["name"]
+        new_pokemon = Pokemonapi.new(rand(1..898))
+        @pokemon_species = new_pokemon.info["name"]
+        @pokemon_level = rand(1..99)
+        @pokemon_sprite = new_pokemon.info["sprites"]["front_default"]
+        @pokemon_type = new_pokemon.info["types"][0]["type"]["name"]
+
     end
 
     def capture
-        @pokemon = Pokemon.find_or_create_by(:nickname => params[:nickname], :species => params[:species], :level => params[:level], :sprite => params[:sprite], :poke_type => params[:type], :user_id => current_user.id)
-        @pokemon.save
+        @pokemon = Pokemon.create(:species => params[:species].keys[0], :nickname => params[:nickname], :poke_type => params[:poke_type].keys[0], :level => params[:level].keys[0], :sprite => params[:sprite].keys[0], :user_id => current_user.id)
+        if @pokemon.valid?
+            @pokemon.save
+            redirect_to pokemon_path(@pokemon)
+        else
+            flash.now[:messages] = "Please enter a valid Pokemon name."
+            render :new
+        end
     end
 
     private

@@ -12,13 +12,32 @@
         </div>
     </div>
     
-    <div id="throw_pokeball">Throw Pokeball</div>
+    <button id="throwpokeball">Throw Pokeball</button>
+    <div id="failedcapture">
+        Oh no! The Pokemon broke free! <br />Throw another Pokeball or search for another Pokemon.
+    </div>
+
+    <div id="captureform">
+        <%= form_with url: pokemons_capture_path do |f| %>
+
+            <%= hidden_field :species, @pokemon_species %>
+            <%= hidden_field :poke_type, @pokemon_type %>
+            <%= hidden_field :level, @pokemon_level %>
+            <%= hidden_field :sprite, @pokemon_sprite %>
+
+            <div class="capture_pokemon_entry">
+                <%= f.label :nickname %>
+                <%= f.text_field :nickname, class: 'pokemon_nickname' %>
+            </div>
+
+            <div class="capture_pokemon_submit_container">
+                <%= f.submit "Capture Pokemon" %>
+            </div>
+        <% end %>
+    </div><br />
+
     <%= link_to "Continue Searching", pokemons_explore_path %>
 </div>
-
-<%= javascript_pack_tag 'pokemon' %>
-
-
 
 <!--
     <%= form_with url: pokemons_capture_path, method: :get do |f| %>

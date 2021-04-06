@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :pokemons
-    has_many :teams
+    has_many :teams, :through => :pokemon_teams
     has_many :user_items
     validates :password, confirmation: true
     validates :name, presence: true

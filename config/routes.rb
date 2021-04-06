@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pokemon_teams
   resources :user_items
   resources :items
   resources :teams
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   get 'pokemons/explore' => 'pokemons#search_for_pokemon'
   get 'pokemons/capture' => 'pokemons#capture'
   post 'pokemons/capture' => 'pokemons#capture'
+  resources :pokemons
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

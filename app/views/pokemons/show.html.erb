@@ -1,0 +1,17 @@
+<div class="page_title">
+    <h1 class="h1_title">
+        <%= @pokemon.species %> 
+    </h1>
+</div>
+
+<div class="page_content">
+
+    <img src="<%= @pokemon.sprite %>">
+
+    <p>Species: <%= @pokemon.species %></p>
+    <p>Nickname: <%= @pokemon.nickname %></p>
+    <p>Type: <%= @pokemon.poke_type %></p>
+    <p>Level: <%= @pokemon.level %></p>
+    <p>Owner: <%= @pokemon.user.name %></p>
+
+</div>
