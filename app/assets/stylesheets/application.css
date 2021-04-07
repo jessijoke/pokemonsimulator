@@ -437,13 +437,38 @@
     align-items: center;
 }
 
+.capture_pokemon_container {
+    margin-top: -55px;
+}
 
+.capture_pokemon_container_inner {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.capture_pokemon_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-weight: bold;
+}
 
+.capture_pokemon_image {
+    margin-top: -40px;
+}
 
+.capture_pokemon_buttons {
+    margin-top: -50px;
+}
 
 
   #failedcapture {
+      text-align: center;
       display: none;
   }
 

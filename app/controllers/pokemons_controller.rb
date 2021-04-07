@@ -46,6 +46,16 @@ class PokemonsController < ApplicationController
         end
     end
 
+    def edit
+        @pokemon = Pokemon.find(params[:id])
+    end
+
+    def update
+        @pokemon = Pokemon.find(params[:id])
+        @pokemon.update(nickname: params[:pokemon][:name])
+        redirect_to pokemon_path(@pokemon)
+    end
+
     private
 
     def pokemon_params

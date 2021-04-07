@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
 
   def omniauth
     @user = User.from_omniauth(auth)
+    
     if @user.valid?
       session[:user_id] = @user.id
       redirect_to controller: 'pages', action: 'index'

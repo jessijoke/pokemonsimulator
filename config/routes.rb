@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :pokemon_teams
   resources :user_items
   resources :items
-  resources :teams
   root to: 'pages#index'
 
   #login
@@ -10,8 +9,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   post '/logout' => 'sessions#destroy'
   get 'welcome', to: 'sessions#welcome'
-  get '/auth/facebook/callback' => 'sessions#omniauth' 
-  get '/auth/google_oauth2/callback' => 'sessions#omniauth' 
+  get '/auth/:provider/callback' => 'sessions#omniauth' 
   resources :users, only: [:new, :create]
 
   #pokemon

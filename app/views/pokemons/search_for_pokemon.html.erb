@@ -1,21 +1,28 @@
 <div class="capture_pokemon_content">
     <div class="capture_pokemon_container">
-        <%= image_tag(@pokemon_sprite) %>
-        <div class="capture_pokemon_title">
-            Species: <%= @pokemon_species.capitalize %>
-        </div>
-        <div class="capture_pokemon_info">
-            <span>Type: <%= @pokemon_type.capitalize %></span>
-        </div>
-        <div class="capture_pokemon_level">
-            <span>Level: <%= @pokemon_level %></span>
+        <div class="capture_pokemon_container_inner">
+            <div class="capture_pokemon_info">
+                <div class="capture_pokemon_title">
+                    <%= @pokemon_species.capitalize %>
+                </div>
+                <div class="capture_pokemon_level">
+                    <span>Lvl: <%= @pokemon_level %></span>
+                </div>
+            </div>
+            <div class="capture_pokemon_image">
+                <%= image_tag(@pokemon_sprite) %>
+            </div>
+            <div class="capture_pokemon_buttons">
+                <button id="throwpokeball">Throw Pokeball</button>
+                <%= link_to "Continue Searching", pokemons_explore_path %>
+            </div>
         </div>
     </div>
     
     
 </div>
 
-<button id="throwpokeball">Throw Pokeball</button>
+
     <div id="failedcapture">
         Oh no! The Pokemon broke free! <br />Throw another Pokeball or search for another Pokemon.
     </div>
@@ -39,4 +46,4 @@
         <% end %>
     </div><br />
 
-    <%= link_to "Continue Searching", pokemons_explore_path %>
+    
