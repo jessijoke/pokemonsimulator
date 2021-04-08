@@ -1,3 +1,4 @@
+
 <div class="capture_pokemon_content">
     <div class="capture_pokemon_container">
         <div class="capture_pokemon_container_inner">
@@ -6,27 +7,26 @@
                     <%= @pokemon_species.capitalize %>
                 </div>
                 <div class="capture_pokemon_level">
-                    <span>Lvl: <%= @pokemon_level %></span>
+                    <span>Lvl: <span id="poke-id"><%= @pokemon_level %></span></span>
                 </div>
             </div>
             <div class="capture_pokemon_image">
                 <%= image_tag(@pokemon_sprite) %>
             </div>
-            <div class="capture_pokemon_buttons">
+            <div class="capture_pokemon_buttons" id="keep_button_from_sliding">
                 <button id="throwpokeball">Throw Pokeball</button>
-                <%= link_to "Continue Searching", pokemons_explore_path %>
+                <%= button_to "Continue Searching", pokemons_explore_path, :method => :get %>
             </div>
         </div>
     </div>
-    
-    
 </div>
 
+<div id="failedcapture">
+    Oh no! The Pokemon broke free! <br />Throw another Pokeball or search for another Pokemon.
+</div>
 
-    <div id="failedcapture">
-        Oh no! The Pokemon broke free! <br />Throw another Pokeball or search for another Pokemon.
-    </div>
-
+    
+<div class="capture-form-container">
     <div id="captureform">
         <%= form_with url: pokemons_capture_path do |f| %>
 
@@ -44,6 +44,6 @@
                 <%= f.submit "Capture Pokemon" %>
             </div>
         <% end %>
-    </div><br />
+    </div>
+</div>
 
-    

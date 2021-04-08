@@ -1,6 +1,17 @@
 
 <div class="pokemon_manager">
-    <%= link_to "All Pokémon", pokemons_path %><br />
-    <%= link_to "Create Team", new_team_path %><br />
-    <%= link_to "View Teams", teams_path %><br />
+    <%= link_to "New Pokémon", new_pokemon_path, id: "red-link" %>
+    <div>|</div>
+    <%= link_to "All Pokémon", pokemons_path, id: "yellow-link" %>
+    <div>|</div>
+    <%= link_to "Create Team", new_team_path, id: "aqua-link" %>
+    <div>|</div>
+    <%= link_to "View Teams", teams_path, id: "blue-link" %>
 </div>
+<div class="nav-divider">
+      <div class="nav-divider-inner nav-divider-red"></div>
+      <div class="nav-divider-inner nav-divider-yellow"></div>
+      <div class="nav-divider-inner nav-divider-green"></div>
+      <div class="nav-divider-inner nav-divider-aqua"></div>
+      <div class="nav-divider-inner nav-divider-blue"></div>
+    </div>

@@ -21,6 +21,8 @@
                 <%= poke.select :pokemon_id, options_from_collection_for_select(@user.pokemons, "id", "species") %>
             <% end %>
 
+
+            
             <%= f.submit "Add Team" %>
         <% end %>
 
