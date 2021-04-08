@@ -1,4 +1,4 @@
 class Pokemon < ApplicationRecord
     belongs_to :user
-    has_one :team, :through => :pokemon_team
+    has_many :teams, through: :pokemon_teams
 end

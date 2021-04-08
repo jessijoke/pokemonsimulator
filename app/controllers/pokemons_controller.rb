@@ -52,13 +52,14 @@ class PokemonsController < ApplicationController
 
     def update
         @pokemon = Pokemon.find(params[:id])
-        @pokemon.update(nickname: params[:pokemon][:name])
+        @pokemon.update(nickname: params[:pokemon][:nickname])
         redirect_to pokemon_path(@pokemon)
     end
 
     private
 
     def pokemon_params
-        params.require(:pokemon).permit(:nickname, :species, :level, :sprite, :poke_type)
+        params.require(:pokemon).permit(*args)
     end
+
 end

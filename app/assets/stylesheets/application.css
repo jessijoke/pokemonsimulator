@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+html {
+    overflow-x: hidden;
+}
+
  body {
     margin: 0px;
     padding: 0px;

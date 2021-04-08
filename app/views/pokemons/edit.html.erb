@@ -9,7 +9,7 @@
 
 <div class="page_content">
 
-    <%= form_with url: edit_pokemon_path do |f| %>
+    <%= form_with model: @pokemon do |f| %>
         <div class="divider">
         <%= f.label 'Pokemon Nickname:', :class => "form_label" %><br>
         <%= f.text_field :nickname, value: @pokemon.nickname %><br>

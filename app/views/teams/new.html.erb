@@ -14,6 +14,13 @@
             <%= f.label "Team Name:" %>
             <%= f.text_field :nickname %>
 
+            <%= f.fields_for :pokemon_teams do |poke| %>
+                <%= hidden_field :team_id, "test" %>
+
+                <%= poke.label "Add Pokemon to Team" %>
+                <%= poke.select :pokemon_id, options_from_collection_for_select(@user.pokemons, "id", "species") %>
+            <% end %>
+
             <%= f.submit "Add Team" %>
         <% end %>
 

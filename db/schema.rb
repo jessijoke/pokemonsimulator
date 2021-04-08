@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_015113) do
+ActiveRecord::Schema.define(version: 2021_04_08_002654) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2021_04_06_015113) do
   end
 
   create_table "pokemon_teams", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "pokemon_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "team_id"
   end
 
   create_table "pokemons", force: :cascade do |t|

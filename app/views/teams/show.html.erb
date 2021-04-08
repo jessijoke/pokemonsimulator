@@ -5,6 +5,9 @@
 <div class="page_title">
     <h1 class="h1_title">
         <%= @team.nickname %> ID: <%= @team.id %> <%= (link_to 'edit', edit_team_path(@team)) %>
+        <%= @team.pokemons.each do |p| %>
+            <%= p.species %>
+        <% end %>
     </h1>
 </div>
 
