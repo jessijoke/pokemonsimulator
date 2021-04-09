@@ -13,10 +13,10 @@ class TeamsController < ApplicationController
 
     def create
         @user = current_user
-        @team = Team.create(:nickname => params[:nickname], :user_id => current_user.id)
-        #@team.pokemons << Pokemon.find(params[:pokemon_teams][:pokemon_id])
-        if @team.valid?
-            @team.save
+        @team = Team.new(:nickname => params[:nickname], :user_id => current_user.id)
+        pokemon = Pokemon.find(params[:pokemon_teams][:pokemon_id])
+        if @team.save
+            @team.pokemons << pokemon
             redirect_to team_path(@team)
         else
             render :new
