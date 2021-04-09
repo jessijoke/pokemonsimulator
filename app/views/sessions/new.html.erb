@@ -16,24 +16,25 @@
                     <%= f.password_field :password, class: 'signup-login-input' %>
                 </div>
 
-                <div class="create_button_container">
-                    <div class="signup_login_submit_btn">
+                <div class="signup_login_submit_btn">
                         <%= f.submit "log in" %>
                     </div>
-
-                    <div class="signup_login_submit_btn facebook_submit">
-                        <%= button_to('Log in with Facebook', '/auth/facebook') %> 
-                    </div>
-
-                    <div class="signup_login_submit_btn google_submit">
-                        <%= button_to('Log in with Google', '/auth/google_oauth2') %> 
-                    </div>
-                </div>
-
-                <div class="or_sign_up">
-                    Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-                </div>
             <% end %>
+            </div>
+
+            <div class="create_button_container">
+                    
+                <div class="signup_login_submit_btn facebook_submit">
+                    <%= button_to('Log in with Facebook', '/auth/facebook') %> 
+                </div>
+
+                <div class="signup_login_submit_btn google_submit">
+                    <%= button_to('Log in with Google', '/auth/google_oauth2') %> 
+                </div>
+            </div>
+
+            <div class="or_sign_up">
+                Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
             </div>
 
     </div>

@@ -29,22 +29,23 @@
                 <%= f.password_field :password_confirmation, class: 'signup-login-input' %>
             </div>
 
-            <div class="create_button_container">
-                <div class="signup_login_submit_btn">
-                    <%= f.submit "Submit" %>
-                </div>
-
-                <div class="signup_login_submit_btn facebook_submit">
-                    <%= button_to('Create with Facebook', '/auth/facebook') %> 
-                </div>
-
-                <div class="signup_login_submit_btn google_submit">
-                    <%= button_to('Create with Google', '/auth/google_oauth2') %> 
-                    <!--<%= f.submit "Create with Google" %>-->
-                </div>
+            <div class="signup_login_submit_btn">
+                <%= f.submit "Submit" %>
             </div>
         
         <% end %>
+        </div>
+
+        <div class="create_button_container">
+             
+
+            <div class="signup_login_submit_btn facebook_submit">
+                <%= button_to('Create with Facebook', '/auth/facebook') %> 
+            </div>
+
+            <div class="signup_login_submit_btn google_submit signup_google_submit">
+                <%= button_to('Create with Google', '/auth/google_oauth2') %> 
+            </div>
         </div>
 
     </div>

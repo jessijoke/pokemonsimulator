@@ -376,8 +376,17 @@ html {
     font-family: 'Exo 2', sans-serif;
   }
 
+  form.button_to {
+      width: 100%;
+  }
+
   .create_button_container {
+      width: 100%;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   }
 
   .signup-login-input {
@@ -391,6 +400,9 @@ html {
   .signup_login_submit_btn {
       width: 100%;
       margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
 
   .signup_login_submit_btn input {
@@ -408,6 +420,11 @@ html {
       font-family: 'Luckiest Guy', cursive;
   }
 
+  .facebook_submit {
+      margin-top: 0px;
+      width: 100%;
+  }
+
   .facebook_submit input {
       background-color: #3B5998;
       color: white;
@@ -418,8 +435,13 @@ html {
       color: #dd0023;
   }
 
+  .signup_google_submit {
+      margin-bottom: 20px;
+  }
+
   .or_sign_up {
       margin-top: 10px;
+      margin-bottom: 20px;
       text-align: center;
   }
 
@@ -537,4 +559,9 @@ html {
 
   .pokemon_all_display {
       display: inline-block;
+  }
+
+  a, a:link, .pokemon_view_all_links {
+      text-decoration: none;
+      color: black;
   }

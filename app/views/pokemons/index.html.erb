@@ -4,10 +4,10 @@ Check out my pokemons I am so 1337 <br />
 
 <% @pokemons.each do |pokemon| %>
    
-    <%= link_to pokemon_path(pokemon.id), :action => 'go' do %>
+    <%= link_to pokemon_path(pokemon.id), class: "pokemon_view_all_links", :action => 'go' do %>
         <div class="pokemon_all_display">
-            <div><%=image_tag(pokemon.sprite)%></div>
-            <div><%=pokemon.species%></div>
+            <div><%= image_tag(pokemon.sprite) %></div>
+            <div><%= pokemon.species %></div>
         </div>
     <% end %>
 <% end %>
