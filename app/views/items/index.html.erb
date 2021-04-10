@@ -1,1 +1,4 @@
-look at all me awesome items I'm such a gangstah pokemastah' bro
+<% @user_items.each do |item| %>
+    <%= image_tag(item.sprite) %>
+    
+<% end %>

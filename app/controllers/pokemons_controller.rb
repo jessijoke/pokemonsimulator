@@ -32,7 +32,6 @@ class PokemonsController < ApplicationController
         @pokemon_level = rand(1..99)
         @pokemon_sprite = new_pokemon.info["sprites"]["front_default"]
         @pokemon_type = new_pokemon.info["types"][0]["type"]["name"]
-
     end
 
     def capture
@@ -52,8 +51,18 @@ class PokemonsController < ApplicationController
 
     def update
         @pokemon = Pokemon.find(params[:id])
-        @pokemon.update(nickname: params[:pokemon][:nickname])
-        redirect_to pokemon_path(@pokemon)
+        if @pokemon.user.id == current_user.id
+            @pokemon.update(nickname: params[:pokemon][:nickname])
+            redirect_to pokemon_path(@pokemon)
+        end
+    end
+
+    def destroy
+        @pokemon = Pokemon.find(params[:id])
+        if @pokemon.user.id == current_user.id
+            @pokemon.destroy
+            redirect_to pokemons_path
+        end
     end
 
     private

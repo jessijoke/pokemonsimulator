@@ -14,3 +14,4 @@ ActiveStorage.start()
 
 //= require_tree .
 //= stub 'pokemon'
+//= stub 'shop'

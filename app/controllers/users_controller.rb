@@ -17,6 +17,10 @@ class UsersController < ApplicationController
         #redirect_to controller: 'users', action: 'new'
       end
     end
+
+    def buy_items
+         
+    end
   
     private
   

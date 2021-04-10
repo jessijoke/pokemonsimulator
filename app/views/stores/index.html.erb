@@ -1,0 +1,26 @@
+<div class="shop_outer_container">
+    <% @items.each do |item| %>
+        <div class="shop_item_container">
+            <div><%= image_tag(item.sprite) %></div>
+            <div><%= item.name %></div>
+            <div><%= item.cost %></div>
+        </div>
+    <% end %>
+</div>
+Price: <span id="shop-text"></span>
+<%= form_with url: user_items_path do |f| %>
+
+    <%= f.collection_select :item_id, @items, "id", "name", prompt: true %>
+
+    <%= f.label "Quantity" %>
+    <div id="quantity_input"><%= f.number_field :quantity %></div>
+
+    <%= f.submit "Buy Pokeballs" %>
+
+<% end %>
+
+ <% if flash[:messages] %>
+        <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
+    <% end %>
+
+     <%= javascript_pack_tag 'shop', 'data-turbolinks-track': 'reload' %>

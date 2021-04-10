@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+    before_action :require_logged_in
+
     def index
         @teams = Team.all
     end
@@ -14,9 +16,15 @@ class TeamsController < ApplicationController
     def create
         @user = current_user
         @team = Team.new(:nickname => params[:nickname], :user_id => current_user.id)
-        pokemon = Pokemon.find(params[:pokemon_teams][:pokemon_id])
+        
         if @team.save
-            @team.pokemons << pokemon
+            i = 1
+            while i < 7 do
+                break if !Pokemon.find_by_id(params[:pokemon_teams]["poke#{i}"])
+                pokemon = Pokemon.find(params[:pokemon_teams]["poke#{i}"])
+                @team.pokemons << pokemon if pokemon
+                i += 1
+             end
             redirect_to team_path(@team)
         else
             render :new
@@ -29,8 +37,18 @@ class TeamsController < ApplicationController
 
     def update
         @team = Team.find(params[:id])
-        @team.update(nickname: params[:team][:nickname])
-        redirect_to team_path(@team)
+        if @team.user.id == current_user.id
+            @team.update(nickname: params[:team][:nickname])
+            redirect_to team_path(@team)
+        end
+    end
+
+    def destroy
+        @team = Team.find(params[:id])
+        if @team.id == current_user.id
+            @team.destroy
+            redirect_to teams_path
+        end
     end
 
     private
