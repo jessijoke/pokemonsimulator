@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :pokemons
+    has_many :pokemon_teams
     has_many :teams, :through => :pokemon_teams
     has_many :user_items
     has_many :items, :through => :user_items

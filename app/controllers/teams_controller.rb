@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        @teams = Team.all
+        @teams = Team.where(:user_id => current_user.id)
     end
 
     def show
@@ -33,6 +33,9 @@ class TeamsController < ApplicationController
 
     def edit
         @team = Team.find(params[:id])
+        if @team.user.id != current_user.id
+            redirect_to teams_path
+        end
     end
 
     def update

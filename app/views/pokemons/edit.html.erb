@@ -1,22 +1,21 @@
 <%= render :partial => "teams/pokemonlayout" %>
 
+    <div class="page_title">
+        <h1 class="h1_title">
+            Edit <%= @pokemon.nickname %>
 
-<div class="page_title">
-    <h1 class="h1_title">
-        Edit <%= @pokemon.nickname %>
+        </h1>
+    </div>
+    <div class="page_content">
 
-    </h1>
-</div>
-<div class="page_content">
-
-    <%= form_with model: @pokemon do |f| %>
-        <div class="divider">
-        <%= f.label 'Pokemon Nickname:', :class => "form_label" %><br>
-        <%= f.text_field :nickname, value: @pokemon.nickname %><br>
-        </div>
+        <%= form_with model: @pokemon do |f| %>
+            <div class="divider">
+            <%= f.label 'Pokemon Nickname:', :class => "form_label" %><br>
+            <%= f.text_field :nickname, value: @pokemon.nickname %><br>
+            </div>
 
 
-        <%= f.submit "Update Team", :class => "button"  %>
-    <% end %> 
+            <%= f.submit "Update Team", :class => "button"  %>
+        <% end %> 
 
- </div>
+    </div>

@@ -3,7 +3,10 @@
 
 <div class="page_title">
     <h1 class="h1_title">
-        <%= @pokemon.species %> <%= (link_to 'edit', edit_pokemon_path(@pokemon)) %> <%= link_to "Delete", @pokemon, method: :delete, data: { confirm: "Really?" } %>
+        <%= @pokemon.species %> 
+        <% if @pokemon.user.id == @user.id %>
+            <%= (link_to 'edit', edit_pokemon_path(@pokemon)) %> <%= link_to "Delete", @pokemon, method: :delete, data: { confirm: "Really?" } %>
+        <% end %>
     </h1>
 </div>
 

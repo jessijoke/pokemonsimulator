@@ -49,6 +49,9 @@ class PokemonsController < ApplicationController
 
     def edit
         @pokemon = Pokemon.find(params[:id])
+        if @pokemon.user.id != current_user.id
+            redirect_to pokemons_path
+        end
     end
 
     def update

@@ -21,5 +21,10 @@ Rails.application.routes.draw do
 
   #teams
   resources :teams
+
+  #search
+  get 'search', to: 'pages#search'
+  post 'search_results', to: 'pages#search_results'
+  get 'search_results', to: 'pages#search_results'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
