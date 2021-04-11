@@ -4,7 +4,14 @@ class ItemsController < ApplicationController
 
     def index
         @user = current_user
-        @user_items = @user.items
+        @items = @user.items
+        @user_items = UserItem.where(:user_id => @user.id)
+        @quantities = {}
+        @user_items.each do |item|
+            @quantities[:"#{item.item_id}"] = item.quantity
+        end
     end
+
+   
 
 end

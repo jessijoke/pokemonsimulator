@@ -571,6 +571,10 @@ html {
     color: #FCCE00;
   }
 
+  #green-link:hover {
+    color: #65B356;
+  }
+
   #aqua-link:hover {
     color: #21B8FF;
   }
@@ -599,11 +603,25 @@ html {
 
   .shop_outer_container {
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
       text-align: center;
   }
 
   .shop_item_container {
+      display: flex;
+      flex-direction: column;
+  }
+
+  /* Inventory */
+
+  .total_inventory {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .inventory_items {
       display: flex;
       flex-direction: column;
   }

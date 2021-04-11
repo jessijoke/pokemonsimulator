@@ -38,6 +38,8 @@ class PokemonsController < ApplicationController
         @pokemon = Pokemon.create(:species => params[:species].keys[0], :nickname => params[:nickname], :poke_type => params[:poke_type].keys[0], :level => params[:level].keys[0], :sprite => params[:sprite].keys[0], :user_id => current_user.id)
         if @pokemon.valid?
             @pokemon.save
+            money = current_user.money += (params[:level].keys[0].to_i*15)
+            current_user.update(:money => money)
             redirect_to pokemon_path(@pokemon)
         else
             flash.now[:messages] = "Please enter a valid Pokemon name."

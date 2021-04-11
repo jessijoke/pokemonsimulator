@@ -36,16 +36,12 @@ class TeamsController < ApplicationController
     end
 
     def update
-        @team = Team.find(params[:id])
-        if @team.user.id == current_user.id
-            @team.update(nickname: params[:team][:nickname])
-            redirect_to team_path(@team)
-        end
+        
     end
 
     def destroy
         @team = Team.find(params[:id])
-        if @team.id == current_user.id
+        if @team.user_id == current_user.id
             @team.destroy
             redirect_to teams_path
         end

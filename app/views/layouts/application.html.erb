@@ -41,16 +41,10 @@
             <%= @user.name.capitalize %>: $<%= @user.money %>
         </div>
         <div class="nav_category sign_up_login">
-            <%= (link_to "Search for Pokémon", pokemons_explore_path) %>
-        </div>
-        <div class="nav_category sign_up_login">
             <%= (link_to "My Pokémon", pokemons_path) %>
         </div>
         <div class="nav_category sign_up_login">
-            <%= (link_to "Inventory", items_path) %>
-        </div>
-        <div class="nav_category sign_up_login">
-            <%= (link_to "Shop", stores_path) %>
+            <%= (link_to "Items", items_path) %>
         </div>
          <div class="nav_category sign_up_login">
             <%= (link_to "Log Out", '/logout', method: :post) %>

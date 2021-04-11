@@ -1,4 +1,12 @@
-<% @user_items.each do |item| %>
-    <%= image_tag(item.sprite) %>
-    
-<% end %>
+<%= render :partial => "items/itemlayout" %>
+
+
+<div class="total_inventory">
+    <% @items.each do |item| %>
+    <div class="inventory_items">
+        <div><%= image_tag(item.sprite) %></div>
+        <div><%= capitalize_name(item.name) %></div>
+        <div>Quantity: <%= @quantities[:"#{item.id}"] %></div>
+    </div>
+    <% end %>
+</div>
