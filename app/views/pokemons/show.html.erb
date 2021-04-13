@@ -5,7 +5,7 @@
     <h1 class="h1_title">
         <%= @pokemon.species %> 
         <% if @pokemon.user.id == @user.id %>
-            <%= (link_to 'edit', edit_pokemon_path(@pokemon)) %> <%= link_to "Delete", @pokemon, method: :delete, data: { confirm: "Really?" } %>
+            <%= (link_to 'edit', edit_pokemon_path(@pokemon), id: "edit_pokemon_id")%> <%= link_to "Delete", @pokemon, method: :delete, data: { confirm: "Really?" }, id: "delete_pokemon_id"%>
         <% end %>
     </h1>
 </div>

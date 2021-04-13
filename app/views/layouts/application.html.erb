@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PokemonMiniProject</title>
+    <title>Pokemon Simulator</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'pokemon_teams', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'pokemons', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'sessions', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'stores', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'teams', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'user_items', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
@@ -62,6 +71,6 @@
       <div class="nav-divider-inner nav-divider-blue"></div>
     </div>
     <%= yield %>
-   
+    
   </body>
 </html>

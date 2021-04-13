@@ -4,11 +4,10 @@
 
 <div class="page_title">
     <h1 class="h1_title">
-        <%= @team.nickname %> <%= (link_to 'edit', edit_team_path(@team)) %> <%= link_to "Delete", @team, method: :delete, data: { confirm: "Really?" } %>
+        <%= @team.nickname %> <%= (link_to 'edit', edit_team_path(@team), id: "edit_pokemon_id") %> <%= link_to "Delete", @team, method: :delete, data: { confirm: "Really?" }, id: "delete_pokemon_id" %>
     </h1>
 </div>
-
-<div class="page_content">
+<div class="page_content pokemon_flex_display">
     <% @team.pokemons.each do |p| %>
         <%= link_to pokemon_path(p.id), class: "pokemon_view_all_links", :action => 'go' do %>
             <div class="pokemon_all_display">

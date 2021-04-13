@@ -1,17 +1,13 @@
 <%= render :partial => "teams/pokemonlayout" %>
 
-
-<% @teams.each do |team| %>
-    <div class="poke_team">
-        <div class="poke_team_name">
-        <%= link_to(team.nickname, team_path(team), id: "pokemon_team_title") %>
-        </div>
-        <div class="pokemon_flex_display">
-        <% team.pokemons.each do |pokemon| %>
+<div class="page_content">
+<%= render :partial => "typelayout" %>
+    <div class="pokemon_flex_display">
+        <% @pokemons.each do |pokemon| %>
         
             <%= link_to pokemon_path(pokemon.id), class: "pokemon_view_all_links", :action => 'go' do %>
                 
-                <%= content_tag(:div, class: ["#{pokemon.poke_type}", "pokemon_all_display"]) do %>
+                <%= content_tag(:div, class: [pokemon.poke_type.to_s, "pokemon_all_display"]) do %>
                     <div><%= image_tag(pokemon.sprite) %></div>
                     <div><%= pokemon.species %></div>
                 <% end %>
@@ -19,4 +15,4 @@
         <% end %>
         </div>
     </div>
-<% end %>
+</div>

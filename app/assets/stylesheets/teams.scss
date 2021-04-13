@@ -1,3 +1,24 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.poke_team {
+    margin-top: 20px;
+  }
+
+  .poke_team_name {
+      text-align: center;
+  }
+
+  a#pokemon_team_title {
+      color: #0045A9;
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 20px;
+  }
+
+  a#pokemon_team_title:hover {
+    color: #FCCE00;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 20px;
+    text-decoration: underline;
+}

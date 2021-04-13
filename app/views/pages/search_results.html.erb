@@ -1,8 +1,14 @@
+<div class="page_title">
+    <h1 class="h1_title">
+        Search Results
+    </div>
+</div>
+
 <div class="page_content">
-
-    <% @results.each do |result| %>
-
-        <%= result.name %>
-    <% end %>
+    <div class="search_results">
+        <% @results.each do |result| %>
+            <div><%= (link_to result.name, user_path(result.id)) %></div>
+        <% end %>
+    </div>
 
  </div>

@@ -18,8 +18,9 @@ class UsersController < ApplicationController
       end
     end
 
-    def buy_items
-         
+    def show
+         @user = User.find(params[:id])
+         @pokemons = @user.pokemons
     end
   
     private

@@ -1,28 +1,36 @@
 <%= render :partial => "items/itemlayout" %>
 
+<div class="page_title">
+    <h1 class="h1_title">
+        Pokeball Shop
+    </div>
+</div>
 
-<div class="shop_outer_container">
-    <% @items.each do |item| %>
-        <div class="shop_item_container">
-            <div><%= image_tag(item.sprite) %></div>
-            <div><%= item.name.capitalize %></div>
-            <div><%= item.cost %></div>
-            <%= form_with url: stores_path do |f| %>
-                <%= hidden_field :item_id, item.id %>
-                <%= hidden_field :item_cost, item.cost %>
+<div class="page_content">
 
-                <%= f.label "Quantity" %>
-                <div id="quantity_input"><%= f.number_field :quantity %></div>
-
-                <%= f.fields_for :pokemon_teams do |poke| %>
+    <div class="shop_outer_container">
+        <% @items.each do |item| %>
+            <div class="shop_item_container">
+                <div><%= image_tag(item.sprite) %></div>
+                <div><%= item.name.capitalize %></div>
+                <div>$<%= item.cost %></div>
+                <%= form_with url: stores_path do |f| %>
+                    <%= hidden_field :item_id, item.id %>
                     <%= hidden_field :item_cost, item.cost %>
-                <% end %>
 
-                 <%= f.submit "Buy #{item.name.capitalize}s" %>
-            <% end %>
-        </div>
+                    <%= f.label "Quantity" %>
+                    <div id="quantity_input"><%= f.number_field :quantity %></div>
+
+                    <%= f.fields_for :pokemon_teams do |poke| %>
+                        <%= hidden_field :item_cost, item.cost %>
+                    <% end %>
+
+                    <%= f.submit "Buy #{item.name.capitalize}s" %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+    <% if flash[:messages] %>
+        <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
     <% end %>
 </div>
-<% if flash[:messages] %>
-    <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
-<% end %>

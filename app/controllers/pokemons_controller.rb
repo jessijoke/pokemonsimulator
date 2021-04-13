@@ -7,6 +7,7 @@ class PokemonsController < ApplicationController
 
     def index
         @pokemons = current_user.pokemons.all
+        @all_types = current_user.pokemons.distinct.pluck(:poke_type)
     end
 
     def create
@@ -24,6 +25,11 @@ class PokemonsController < ApplicationController
 
     def show
         @pokemon = Pokemon.find(params[:id])
+    end
+
+    def show_pokemon_type
+        @all_types = current_user.pokemons.distinct.pluck(:poke_type)
+        @pokemons = current_user.pokemons.get_pokemon_by_type(params[:type])
     end
 
     def search_for_pokemon
