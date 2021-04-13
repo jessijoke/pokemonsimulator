@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     def show
          @user = User.find(params[:id])
          @pokemons = @user.pokemons
+         @params_id = params[:id].to_i if params[:id]
     end
 
     def pokemons_index

@@ -16,13 +16,7 @@ class TeamsController < ApplicationController
 
     def new
         #fix this logic later -- If you aren't the current user you shouldn't be able to view this form.
-        if !params[:user_id]
-            @team = Team.new
-        elsif current_user.id == params[:user_id]
-            @team = Team.new
-        else
-            redirect_to new_team_path
-        end
+        @team = Team.new
     end
 
     def create
