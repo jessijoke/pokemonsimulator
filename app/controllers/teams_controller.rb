@@ -2,7 +2,12 @@ class TeamsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        @teams = Team.where(:user_id => current_user.id)
+        if !params[:user_id]
+            @teams = Team.where(:user_id => current_user.id)
+        else
+            @user = User.find(params[:user_id])
+            @teams = Team.where(:user_id => User.find(params[:user_id]))
+        end
     end
 
     def show
@@ -10,7 +15,14 @@ class TeamsController < ApplicationController
     end
 
     def new
-        @team = Team.new
+        #fix this logic later -- If you aren't the current user you shouldn't be able to view this form.
+        if !params[:user_id]
+            @team = Team.new
+        elsif current_user.id == params[:user_id]
+            @team = Team.new
+        else
+            redirect_to new_team_path
+        end
     end
 
     def create

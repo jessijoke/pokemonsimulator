@@ -1,8 +1,5 @@
 <%= render :partial => "teams/pokemonlayout" %>
 
-<% if flash[:messages] %>
-        <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
-<% end %>
 
 <div class="page_title">
     <h1 class="h1_title">
@@ -11,7 +8,13 @@
 </div>
 
 <div class="page_content">
+        <div>
+        <% if flash[:messages] %>
+                <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
+        <% end %>
+        </div>
     <div class="hatch_a_pokemon">
+
         <%= form_with url: pokemons_path do |f| %>
 
                 <div class="capture_pokemon_entry">

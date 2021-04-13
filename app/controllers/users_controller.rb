@@ -22,6 +22,23 @@ class UsersController < ApplicationController
          @user = User.find(params[:id])
          @pokemons = @user.pokemons
     end
+
+    def pokemons_index
+        @pokemons = User.find(params[:id]).pokemons.all
+        @all_types = User.find(params[:id]).pokemons.distinct.pluck(:poke_type)
+        render template: 'pokemon/show'
+    end
+
+
+    def teams_new
+        @team = Team.new
+        render template: 'teams/new'
+    end
+
+    def teams_show
+        
+        render template: 'teams/show'
+    end
   
     private
   

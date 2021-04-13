@@ -6,20 +6,32 @@ class PokemonsController < ApplicationController
     end
 
     def index
-        @pokemons = current_user.pokemons.all
-        @all_types = current_user.pokemons.distinct.pluck(:poke_type)
+        if !params[:user_id]
+            @pokemons = current_user.pokemons.all
+            @all_types = current_user.pokemons.distinct.pluck(:poke_type)
+        else
+            @user = User.find(params[:user_id])
+            @pokemons = User.find(params[:user_id]).pokemons.all
+            @all_types = User.find(params[:user_id]).pokemons.distinct.pluck(:poke_type)
+        end
     end
 
     def create
-        new_pokemon = Pokemonapi.new(params[:species])
-        @pokemon = Pokemon.create(:species => new_pokemon.info["name"], :nickname => params[:name], :poke_type => new_pokemon.info["types"][0]["type"]["name"], :level => 1, :sprite => new_pokemon.info["sprites"]["front_default"], :user_id => current_user.id)
-        if @pokemon.valid?
-            @pokemon.save
-            redirect_to pokemon_path(@pokemon)
-        else
+        begin
+            new_pokemon = Pokemonapi.new(params[:species])
+            @pokemon = Pokemon.create(:species => new_pokemon.info["name"], :nickname => params[:name], :poke_type => new_pokemon.info["types"][0]["type"]["name"], :level => 1, :sprite => new_pokemon.info["sprites"]["front_default"], :user_id => current_user.id)
+            if @pokemon.valid?
+                @pokemon.save
+                redirect_to pokemon_path(@pokemon)
+            end
+        rescue JSON::ParserError
+            flash.now[:messages] = "Please enter a valid Pokemon name."
+            render :new
+        rescue NoMethodError
             flash.now[:messages] = "Please enter a valid Pokemon name."
             render :new
         end
+ 
         
     end
 

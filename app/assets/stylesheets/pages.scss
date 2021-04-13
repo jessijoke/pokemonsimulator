@@ -19,3 +19,14 @@
     text-decoration: underline;
     line-height: 200%;
 }
+
+a#user_nav_link {
+    color: #0045A9;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 18px;
+}
+
+a#user_nav_link:hover {
+    color: #FCCE00;
+    text-decoration: underline;
+}

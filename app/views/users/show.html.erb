@@ -1,8 +1,11 @@
-<div>
-    <%= @user.name %>
+<div class="page_title">
+    <h1 class="h1_title">
+    <%= @user.name.capitalize %>
+    </div>
 </div>
 
-<div>
+<div class="page_content">
+<%= link_to "View #{@user.name.capitalize}'s Pokemon", user_pokemons_path(@user) %>
 Pokemon:
     <div class="pokemon_flex_display">
         <% @pokemons.each do |pokemon| %>
