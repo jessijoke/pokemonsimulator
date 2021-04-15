@@ -15,3 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w(pokemon.js)
 Rails.application.config.assets.precompile += %w(shop.js)
+Rails.application.config.assets.precompile += %w(game.js)
+Rails.application.config.assets.precompile += %w(createjs.js)

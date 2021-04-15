@@ -5,6 +5,8 @@ class User < ApplicationRecord
     has_many :teams, :through => :pokemon_teams
     has_many :user_items
     has_many :items, :through => :user_items
+    has_many :friendships, dependent: :destroy
+    has_many :friends, through: :friendships
     validates :password, confirmation: true
     validates :name, presence: true
     validates :email, presence: true, :uniqueness => {:scope => :email}

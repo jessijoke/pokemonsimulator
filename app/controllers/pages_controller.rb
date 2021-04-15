@@ -12,7 +12,11 @@ class PagesController < ApplicationController
                 .matches("%#{params[:entry]}%")
             )
     end
+    
+    def game
 
+    end
+    
     private
       def search_params
         params.require(:search).permit(:entry)

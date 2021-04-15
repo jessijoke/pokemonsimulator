@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  root to: 'pages#index'
   resources :stores
   resources :pokemon_teams
   resources :user_items
   resources :items
-  root to: 'pages#index'
+  resources :friendships
 
-  #login
+  #login and users
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   post '/logout' => 'sessions#destroy'
@@ -32,4 +33,7 @@ Rails.application.routes.draw do
   post 'search/results', to: 'pages#search_results'
   get 'search/results', to: 'pages#search_results'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  #pages
+  get 'pages/game', to: 'pages#game'
 end
