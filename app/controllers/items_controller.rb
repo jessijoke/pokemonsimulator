@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
     before_action :require_logged_in
 
     def index
@@ -11,7 +10,5 @@ class ItemsController < ApplicationController
             @quantities[:"#{item.item_id}"] = item.quantity
         end
     end
-
-   
 
 end

@@ -5,7 +5,7 @@
     <h1 class="h1_title">
         <%= @pokemon.species %> 
         <% if @pokemon.user.id == @user.id %>
-            <%= (link_to 'edit', edit_pokemon_path(@pokemon), id: "edit_pokemon_id")%> <%= link_to "Delete", @pokemon, method: :delete, data: { confirm: "Really?" }, id: "delete_pokemon_id"%>
+            <%= (link_to 'edit', edit_pokemon_path(@pokemon), id: "edit_pokemon_id")%> <%= link_to "Send to the Professor ($#{@professor_buy_price})", @pokemon, method: :delete, data: { confirm: "The professor will pay you #{@professor_buy_price} for sending him this pokemon for research, but you will not get this Pokemon back. Would you still like to send this Pokemon to the Professor?" }, id: "delete_pokemon_id"%>
         <% end %>
     </h1>
 </div>

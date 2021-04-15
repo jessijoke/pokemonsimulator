@@ -8,6 +8,10 @@
 
 <div class="page_content">
 
+    <% if flash[:messages] %>
+        <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
+    <% end %>
+
     <div class="shop_outer_container">
         <% @items.each do |item| %>
             <div class="shop_item_container">
@@ -30,7 +34,5 @@
             </div>
         <% end %>
     </div>
-    <% if flash[:messages] %>
-        <h2 class="login_signup_errors"><%= flash[:messages] %></h2>
-    <% end %>
+    
 </div>

@@ -15,12 +15,10 @@ class SessionsController < ApplicationController
       flash.now[:messages] = "Username or password is incorrect."
       render controller: 'sessions', action: 'new'
     end
-
   end
 
   def omniauth
     @user = User.from_omniauth(auth)
-    
     if @user.valid?
       session[:user_id] = @user.id
       redirect_to controller: 'pages', action: 'index'

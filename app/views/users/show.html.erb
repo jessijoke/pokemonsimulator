@@ -1,25 +1,17 @@
 <div class="page_title">
     <h1 class="h1_title">
-    <%= @user.name.capitalize %>
+    <%= @user_display.name.capitalize %>
     </div>
 </div>
 
 <div class="page_content">
-<%= link_to "View #{@user.name.capitalize}'s Pokemon", user_pokemons_path(@user) %>
-<%= link_to "View #{@user.name.capitalize}'s Teams", user_teams_path(@user) %>
-<% if @params_id == @user.id %>
-    <%= link_to "Create New Team", new_user_team_path(@user.id) %>
-<% end %>
-Pokemon:
-    <div class="pokemon_flex_display">
-        <% @pokemons.each do |pokemon| %>
-            <%= link_to pokemon_path(pokemon.id), class: "pokemon_view_all_links", :action => 'go' do %>
-        
-                <%= content_tag(:div, class: [pokemon.poke_type.to_s, "pokemon_all_display"]) do %>
-                    <div><%= image_tag(pokemon.sprite) %></div>
-                    <div><%= pokemon.species %></div>
-                <% end %>
+    <div class="user_content">
+        <div class="user_links"><%= link_to "View #{@user_display.name.capitalize}'s Pokemon (#{@user_display.pokemons.count})", user_pokemons_path(@user_display) %></div>
+        <div class="user_links"><%= link_to "View #{@user_display.name.capitalize}'s Teams", user_teams_path(@user_display) %></div>
+        <div class="user_links">
+            <% if @params_id == @user.id %>
+                <%= link_to "Create New Team", new_user_team_path(@user.id) %>
             <% end %>
-        <% end %>
+        </div>
     </div>
 </div>

@@ -10,18 +10,22 @@ class StoresController < ApplicationController
     end
 
     def create
-        if current_user.money >= (params[:item_cost].keys[0].to_i * params[:quantity].to_i)
-            if UserItem.exists?(:user_id => current_user.id, :item_id => params[:item_id].keys[0].to_i)
-                @record = UserItem.find_by(:user_id => current_user.id, :item_id => params[:item_id].keys[0].to_i)
-                total = @record.quantity += params[:quantity].to_i
-                money = current_user.money -= (params[:item_cost].keys[0].to_i * params[:quantity].to_i)
+        #params item cost variable
+        item_cost_params = params[:item_cost].keys[0].to_i
+        quantity_params = params[:quantity].to_i
+        item_id_params = params[:item_id].keys[0].to_i
+        if current_user.money >= (item_cost_params * quantity_params)
+            if UserItem.exists?(:user_id => current_user.id, :item_id => item_id_params)
+                @record = UserItem.find_by(:user_id => current_user.id, :item_id => item_id_params)
+                total = @record.quantity += quantity_params
+                money = current_user.money -= (item_cost_params * quantity_params)
                 current_user.update(:money => money)
                 @record.update(:quantity => total)
                 redirect_to items_path
             else
-                money = current_user.money -= (params[:item_cost].keys[0].to_i * params[:quantity].to_i)
+                money = current_user.money -= (item_cost_params * quantity_params)
                 current_user.update(:money => money)
-                UserItem.create(:user_id => current_user.id, :item_id => params[:item_id].keys[0].to_i, :quantity => params[:quantity])
+                UserItem.create(:user_id => current_user.id, :item_id => item_id_params, :quantity => params[:quantity])
                 redirect_to items_path
             end 
         else

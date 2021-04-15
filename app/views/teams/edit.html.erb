@@ -1,22 +1,29 @@
 <%= render :partial => "teams/pokemonlayout" %>
-
-
 <div class="page_title">
     <h1 class="h1_title">
         Edit <%= @team.nickname %>
     </h1>
 </div>
-
 <div class="page_content">
-
     <%= form_for @team do |f| %>
         <div class="divider">
-        <%= f.label 'Team Name:', :class => "form_label" %><br>
-        <%= f.text_field :nickname %><br>
+            <%= f.label 'Team Name:', :class => "form_label" %><br>
+            <%= f.text_field :nickname %><br>
         </div>
-    
-
+        <p>The maximum number of pokemons per team is 6. Remember that you will have to remove some to add new ones!</p>
+        <div class="divider">
+            <%= f.label :pokemons, "Which pokemon would you like to keep?" %>
+            <%= f.collection_check_boxes(:pokemons, @team.pokemons, :id, :species) %>
+        </div>
+        <p>Add pokemons:</p>
+        <%= f.fields_for :pokemon_teams do |poke| %>
+            <%= hidden_field :team_id, value: @team.id %>
+            <%= poke.label "Add Pokemon to Team" %>
+            <% for number in (1..6) %>
+                <%= poke.collection_select "poke#{number}", @user.pokemons, "id", "species", prompt: true %>
+            <% end %>
+        <% end %>
+        <br>
     <%= f.submit "Update Team", :class => "button"  %>
     <% end %> 
-
  </div>

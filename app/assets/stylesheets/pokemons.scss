@@ -20,6 +20,18 @@
     justify-content: center;
 }
 
+.hatch_pokemon_image_flex_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.hatch_pokemon_image img {
+  align-self: center;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
 /*Pokemon Manager Layout*/
 .pokemon_manager {
     display: flex;

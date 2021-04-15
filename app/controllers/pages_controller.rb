@@ -5,12 +5,12 @@ class PagesController < ApplicationController
     end
 
     def search_results
+        #move to model
         @results = User.where(
             User.arel_table[:name]
                 .lower
                 .matches("%#{params[:entry]}%")
             )
-        #@results = User.where(:name like params[:entry])
     end
 
     private

@@ -10,7 +10,7 @@ class PokemonsController < ApplicationController
             @pokemons = current_user.pokemons.all
             @all_types = current_user.pokemons.distinct.pluck(:poke_type)
         else
-            @user = User.find(params[:user_id])
+            @user = current_user
             @pokemons = User.find(params[:user_id]).pokemons.all
             @all_types = User.find(params[:user_id]).pokemons.distinct.pluck(:poke_type)
         end
@@ -31,12 +31,11 @@ class PokemonsController < ApplicationController
             flash.now[:messages] = "Please enter a valid Pokemon name."
             render :new
         end
- 
-        
     end
 
     def show
         @pokemon = Pokemon.find(params[:id])
+        @professor_buy_price = @pokemon.level * 100
     end
 
     def show_pokemon_type
@@ -50,6 +49,14 @@ class PokemonsController < ApplicationController
         @pokemon_level = rand(1..99)
         @pokemon_sprite = new_pokemon.info["sprites"]["front_default"]
         @pokemon_type = new_pokemon.info["types"][0]["type"]["name"]
+
+        #pokeball access
+        @items = current_user.items
+        @user_items = UserItem.where(:user_id => @user.id)
+        @quantities = {}
+        @user_items.each do |item|
+            @quantities[:"#{item.item_id}"] = item.quantity
+        end
     end
 
     def capture
@@ -83,6 +90,8 @@ class PokemonsController < ApplicationController
     def destroy
         @pokemon = Pokemon.find(params[:id])
         if @pokemon.user.id == current_user.id
+            money = current_user.money + (@pokemon.level * 100)
+            current_user.update(:money => money)
             @pokemon.destroy
             redirect_to pokemons_path
         end

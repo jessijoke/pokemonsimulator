@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :verify_authenticity_token, only: :create
 
     def new
+
     end
   
     def create
@@ -14,12 +15,11 @@ class UsersController < ApplicationController
       else
         flash.now[:messages] = @user.errors.full_messages[0]
         render controller: 'users', action: 'new'
-        #redirect_to controller: 'users', action: 'new'
       end
     end
 
     def show
-         @user = User.find(params[:id])
+         @user_display = User.find(params[:id])
          @pokemons = @user.pokemons
          @params_id = params[:id].to_i if params[:id]
     end
