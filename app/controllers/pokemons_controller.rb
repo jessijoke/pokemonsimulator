@@ -8,7 +8,7 @@ class PokemonsController < ApplicationController
     def index
         if !params[:user_id]
             @pokemons = current_user.pokemons.all 
-            @pokemon_user = @pokemons.first.user if current_user.pokemons.all.count > 0
+            @pokemon_user = @pokemons.first.user.name if current_user.pokemons.all.count > 0
             @all_types = current_user.pokemons.distinct.pluck(:poke_type) 
         else
             @user = current_user
