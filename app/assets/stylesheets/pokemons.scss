@@ -274,3 +274,31 @@ a, a:link, .pokemon_view_all_links {
     #8e675d 60px
     );
   }
+
+  .fairy {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #f8beff;
+    background-color: #fc7aeb;
+    background: repeating-linear-gradient(
+    45deg,
+    #fc7aeb,
+    #fc7aeb 30px,
+    #f8beff 30px,
+    #f8beff 60px
+    );
+  }
+
+  .dragon {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #4b8a5e;
+    background-color: #64a989;
+    background: repeating-linear-gradient(
+    45deg,
+    #64a989,
+    #64a989 30px,
+    #8ac9b5 30px,
+    #8ac9b5 60px
+    );
+  }
