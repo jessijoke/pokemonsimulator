@@ -2,7 +2,15 @@
     <h1 class="h1_title">
     <%= @user_display.name.capitalize %>
     <% if @user_display.id != @user.id %>
-       -  Add Friend
+        <% if !@is_friends %>
+            <%= form_with url: friendships_path, method: "post" do |f| %>
+                <%= hidden_field :friend_id, @user_display.id %>
+                <%= f.submit "Add Friend" %>
+            <% end %>
+        <% else %>
+            <%= button_to "Delete Friend", {:controller => :friendships,
+      :action => 'destroy', :friend_id => @user_display.id }, :method => :delete %>
+        <% end %>
     <% end %>
     </div>
 </div>

@@ -2,18 +2,14 @@ class FriendshipsController < ApplicationController
     protect_from_forgery with: :exception
 
     def create
-        if params.include?(:friend_id) 
-            @new_friendships = Friendship.create_reciprocal_for_ids(current_user_id, params[:friend_id])
-        else
-            params[:user][:friend_ids].each do |f_id|
-                @new_friendships = Friendship.create_reciprocal_for_ids(current_user_id, f_id)
-            end
-        end
-            redirect_to users_path
+        @friend = params[:friend_id].keys[0].to_i
+        @new_friendships = Friendship.create_reciprocal_for_ids(current_user.id, @friend)
+        redirect_to user_path(@friend)
     end
 
     def destroy
-        Friendship.destroy_reciprocal_for_ids(current_user_id, params[:friend_id])
-        redirect_to(request.referer)
+        @friend = params[:friend_id].to_i
+        Friendship.destroy_reciprocal_for_ids(current_user.id, params[:friend_id])
+        redirect_to user_path(@friend)
     end
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   post '/logout' => 'sessions#destroy'
   get 'welcome', to: 'sessions#welcome'
+  get 'users/friends', to: 'users#friends'
   get '/auth/:provider/callback' => 'sessions#omniauth' 
   resources :users, only: [:new, :create, :show] do
       resources :pokemons, only: [:index]

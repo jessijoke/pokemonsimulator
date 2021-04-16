@@ -22,6 +22,17 @@ class UsersController < ApplicationController
          @user_display = User.find(params[:id])
          @pokemons = @user.pokemons
          @params_id = params[:id].to_i if params[:id]
+         begin
+          if @user_display.friends.find(current_user.id)
+            @is_friends = true
+          end
+        rescue ArgumentError, ActiveRecord::RecordNotFound
+          @is_friends = false
+         end
+    end
+
+    def friends
+      @user = current_user
     end
 
     def pokemons_index

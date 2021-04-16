@@ -1,0 +1,16 @@
+<%= render :partial => "users/userlayout" %>
+
+
+<div class="page_title">
+    <h1 class="h1_title">
+       Friends List
+    </h1>
+</div>
+
+<div class="page_content">
+    <div class="user_content">
+       <% @user.friends.each do |friend| %>
+            <div class="user_links"><%= link_to friend.name, user_path(friend) %></div>
+       <% end %>
+    </div>
+ </div>
