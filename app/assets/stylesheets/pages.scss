@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.gameFrame {
+    border: none;
+    width: 100%;
+    width: 100%;
+    min-height: 80vh;
+}
+
+
 
 .search_results {
     display: flex;
