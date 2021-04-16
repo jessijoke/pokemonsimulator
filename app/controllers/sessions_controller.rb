@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       render controller: 'sessions', action: 'new'
     end
   end
-
+  
   def omniauth
     @user = User.from_omniauth(auth)
     if @user.valid?

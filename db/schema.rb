@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2021_04_15_164830) do
     t.integer "store_id"
   end
 
+  Item.find_by(4).update(:cost => 100000)
+
   create_table "pokemon_teams", force: :cascade do |t|
     t.integer "pokemon_id"
     t.datetime "created_at", precision: 6, null: false
