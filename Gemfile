@@ -29,6 +29,7 @@ gem 'http', '~> 4.4', '>= 4.4.1'
 gem 'json', '~> 2.5', '>= 2.5.1'
 gem 'httparty', '~> 0.18.1'
 gem 'pry-rails'
+gem 'rails_12factor', group: :production
 
 
 # Use Active Storage variant
