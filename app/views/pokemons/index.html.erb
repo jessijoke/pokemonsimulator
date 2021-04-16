@@ -1,8 +1,13 @@
 <%= render :partial => "teams/pokemonlayout" %>
 
+
 <div class="page_title">
     <h1 class="h1_title">
-        <%= @pokemons.first.user.name %>'s Pokemon
+        <% if @pokemon_user %>
+        <%= @pokemon_user %>'s Pokemon
+        <% else %>
+        Capture or hatch some Pokemon.
+        <% end %>
     </div>
 </div>
 
