@@ -105,6 +105,30 @@ a, a:link, .pokemon_view_all_links {
     color: black;
 }
 
+/*capture pokemon page*/
+
+.capture_pokeball_options {
+  margin-top: 15vh;
+}
+
+.no_pokeballs {
+  color: #1659a3;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+.no_pokeballs a {
+  color: #65B356;
+}
+
+.no_pokeballs a:hover {
+  color: #fdcd00;
+  text-decoration: underline;
+}
+
+
+
 /*Backgrounds for Pokemon displaying on a single page */
 
 .normal {

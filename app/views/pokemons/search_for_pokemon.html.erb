@@ -14,8 +14,11 @@
             <div class="capture_pokemon_image">
                 <%= image_tag(@pokemon_sprite) %>
             </div>
+            
             <div class="capture_pokemon_buttons" id="keep_button_from_sliding">
+            <% if @user.items.count != 0 %>
                 <button id="throwpokeball">Throw Pokeball</button>
+                <% end %>
                 <div class="continue_searching_link"><%= button_to "Continue Searching", pokemons_explore_path, :method => :get %></div>
             </div>
         </div>
@@ -27,10 +30,8 @@
 </div>
 
     
-<div class="capture-form-container">
-    <div id="selectPokeball">
-       
-    </div>
+<div class="capture-form-container" id="hidden-container-fix">
+    
     <div id="captureform">
         <%= form_with url: pokemons_capture_path do |f| %>
 
@@ -50,5 +51,26 @@
         <% end %>
     </div>
 </div>
+<div class="total_inventory capture_pokeball_options">
+    <% if @user.items.count != 0 %>
+        <% @items.each do |item| %>
+        <div class="inventory_items">
+            <div><%= image_tag(item.sprite) %></div>
+            <div><%= capitalize_name(item.name) %></div>
+            <div>Quantity: <%= @quantities[:"#{item.id}"] %></div>
+            <% if item.id == 3 %>
+                <%= content_tag(:input, nil, :type => 'radio', :value => item.id, :name => "pokeball", checked: true) %>
+            <% else %>
+                <%= content_tag(:input, nil, :type => 'radio', :value => item.id, :name => "pokeball") %>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+<% else %>
+<div class="no_pokeballs">
+You need to purchase Pokeballs before you can capture Pokemon. <br> 
+Please head to the <%= link_to "Pokeball Shop", stores_path, :class => "shop_link" %>.
+</div>
+<% end %>
 
  <%= javascript_pack_tag 'pokemon', 'data-turbolinks-track': 'reload' %>

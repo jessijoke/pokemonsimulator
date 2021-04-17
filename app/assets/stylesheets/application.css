@@ -517,14 +517,20 @@ html {
 
   #failedcapture {
       text-align: center;
-      display: none;
+      visibility: hidden;
+      /*display: none;*/
       font-family: sans-serif;
       font-size: 12px;
       margin-top: -350px;
   }
 
   #captureform {
-      display: none;
+      visibility: hidden;
+      /*display: none;*/
+  }
+
+  #hidden-container-fix {
+    visibility: hidden;
   }
 
   .capture-form-container {
@@ -535,7 +541,7 @@ html {
       background-color: #19191b;
       margin-left: auto;
       margin-right: auto;
-      margin-top: -160px;
+      margin-top: 170px;
   }
 
   #throwpokeball, .continue_searching_link input  {

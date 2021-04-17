@@ -58,6 +58,7 @@ class PokemonsController < ApplicationController
         @user_items.each do |item|
             @quantities[:"#{item.item_id}"] = item.quantity
         end
+        #render json: @user_items, only: [:item_id, :quantity]
     end
 
     def capture
