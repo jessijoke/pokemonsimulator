@@ -19,10 +19,12 @@
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap" rel="stylesheet">
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
     
   </head>
 
@@ -42,29 +44,38 @@
         </div>
       </div>
     <% else %>
-      <div class="nav_container" id="nav_logged_out">
-      <div class="nav_category nav_logo">
-          <%= link_to image_tag("logo.png"), "/" %>
+    <div class="nav_container" id="nav_logged_out">
+      <div class="nav_logged_in_flex">
+        <div class="nav_category nav_logo">
+          <div class="nav_category nav_logo">
+            <%= link_to image_tag("logo.png"), "/" %>
+          </div>
         </div>
-         <div class="nav_category sign_up_login user_info">
+        <div id="nav_for_small_screens">
+          <div class="menu_button" id="menu_icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        </div>
+        <div class="nav_logged_in_elements" id="nav_for_large_screens">
+          <div class="nav_category sign_up_login user_info">
             <%= (link_to "#{@user.name.capitalize}: $#{@user.money}", user_path(@user), id: "user_nav_link" ) %>
-        </div>
-        <div class="nav_category sign_up_login">
-            <%= (link_to "My Pokémon", pokemons_path) %>
-        </div>
-        <div class="nav_category sign_up_login">
-            <%= (link_to "Items", items_path) %>
-        </div>
-        <div class="nav_category sign_up_login">
-            <%= (link_to "Game", pages_game_path) %>
-        </div>
-        <div class="nav_category sign_up_login">
-            <%= (link_to "Community", "/search") %>
-        </div>
-         <div class="nav_category sign_up_login">
-            <%= (link_to "Log Out", '/logout', method: :post) %>
+          </div>
+          <div class="nav_category sign_up_login">
+              <%= (link_to "My Pokémon", pokemons_path) %>
+          </div>
+          <div class="nav_category sign_up_login">
+              <%= (link_to "Items", items_path) %>
+          </div>
+          <div class="nav_category sign_up_login">
+              <%= (link_to "Game", pages_game_path) %>
+          </div>
+          <div class="nav_category sign_up_login">
+              <%= (link_to "Community", "/search") %>
+          </div>
+          <div class="nav_category sign_up_login">
+              <%= (link_to "Log Out", '/logout', method: :post) %>
+          </div>
         </div>
       </div>
+    </div>
     <% end %>
     <div class="nav-divider">
       <div class="nav-divider-inner nav-divider-red"></div>
@@ -76,4 +87,5 @@
     <%= yield %>
     
   </body>
+   <%= javascript_pack_tag 'menu', 'data-turbolinks-track': 'reload' %>
 </html>
