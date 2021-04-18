@@ -1,7 +1,7 @@
 <div class="pokemon_types">
     <% @all_types.each do |type| %>
-        <div class="pokemon_type_inner">
+        <%= content_tag(:div, class: ["#{type}_nav", "pokemon_type_inner"]) do %>
             <%= link_to type, "/pokemons/show_pokemon_type/#{type}" %>
-        </div>
+        <% end %>
     <% end %>
 </div>

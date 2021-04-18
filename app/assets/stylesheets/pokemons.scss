@@ -50,6 +50,15 @@
       color: black;
   }
 
+  .pokemon_type_inner {
+    width: 100px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+  }
+
   .pokemon_type_inner a {
       font-family: 'Exo 2', sans-serif;
   }
@@ -382,5 +391,97 @@ a, a:link, .pokemon_view_all_links {
     #f4d3d8 60px
     );
   }
+
+  /*nav*/
+
+  .normal_nav {
+    border-color: #9ca16c;
+    background-color: #c3c79d;
+  }
+  
+  .fire_nav {
+    border-color: #bf2a16;
+    background-color: #fa8f7a;
+  }
+  
+  .water_nav {
+    border-color: #1659a3;
+    background-color: #96edfa;
+  }
+  
+  .grass_nav {
+    border-color: #3a7231;
+    background-color: #c2df5e;
+  }
+  
+  .electric_nav {
+    border-color: #9b5b23;
+    background-color: #fff88b;
+  }
+  
+  .ice_nav {
+    border-color: #539fe0;
+    background-color: #cceaf5;
+  }
+  
+  .fighting_nav {
+    border-color: #942698;
+    background-color: #bf423f;
+  }
+  
+  .poison_nav {
+    border-color: #b01f29;
+    background-color: #9139aa;
+  }
+  
+  .ground_nav {
+    border-color: #d6bb5c;
+    background-color: #e3cf8a;
+  }
+  
+  .flying_nav {
+    border-color: #a37bef;
+    background-color: #c3a6f9;
+  }
+  
+  .psychic_nav {
+    border-color: #ee3f80;
+    background-color: #f5679c;
+  }
+  
+  .bug_nav {
+    border-color: #418d41;
+    background-color: #65b565;
+  }
+  
+  .rock_nav {
+    border-color: #9a6e2f;
+    background-color: #b58b4e;
+  }
+  
+  .ghost_nav {
+    border-color: #67478e;
+    background-color: #8861a9;
+  }
+  
+    .dark_nav {
+      border-color: #634e3f;
+      background-color: #866c5a;
+    }
+  
+    .dragon_nav {
+      border-color: #7000f9;
+      background-color: #9c4dfc;
+    }
+   
+    .steel_nav {
+      border-color: #7f7d8d;
+      background-color: #b1aeca;
+    }
+    
+    .fairy_nav {
+      border-color: #c86878;
+      background-color: #e9aab5;
+    }
 
   
