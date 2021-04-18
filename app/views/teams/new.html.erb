@@ -12,17 +12,17 @@
 
         <%= form_with url: teams_path do |f| %>
             <%= f.label "Team Name:" %>
-            <%= f.text_field :nickname %>
+            <%= f.text_field :nickname %><br /><br />
 
             <%= f.fields_for :pokemon_teams do |poke| %>
                 <%= hidden_field :team_id, "test" %>
 
-                <%= poke.label "Add Pokemon to Team" %>
+                <%= poke.label "Add Pokemon to Team" %><br />
 
                 <% for number in (1..6) %>
-                    <%= poke.collection_select "poke#{number}", @user.pokemons, "id", "species", prompt: true %>
+                    <%= poke.collection_select "poke#{number}", @user.pokemons, "id", "species", prompt: true %><br /><br />
                 <% end %>
-                
+                <br />
             <% end %>
 
 

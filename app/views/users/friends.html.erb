@@ -8,7 +8,7 @@
 </div>
 
 <div class="page_content">
-    <div class="user_content">
+    <div class="search_results">
        <% @user.friends.each do |friend| %>
             <div class="user_links"><%= link_to friend.name, user_path(friend) %></div>
        <% end %>

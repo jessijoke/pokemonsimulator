@@ -7,10 +7,17 @@
   .total_inventory {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .inventory_items {
+      width: 150px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      border-style: solid;
+      border-width: 1px;
+      border-color: black;
   }
