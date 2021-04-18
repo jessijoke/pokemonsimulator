@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .pokemon_types {
+  
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     box-shadow: 0 3px 2px -2px rgba(0,0,0,0.1);
 }
@@ -44,7 +45,7 @@
   }
 
   .pokemon_types {
-      background-color: lightgrey;
+      background-color: #1659a3;
       padding: 10px 0px 10px 0px;
       margin-bottom: 20px;
       color: black;
@@ -52,7 +53,7 @@
 
   .pokemon_type_inner {
     width: 100px;
-    padding: 10px 0px 10px 0px;
+    padding: 15px 0px 10px 0px;
     text-align: center;
     background-color: white;
     border-style: solid;
@@ -61,11 +62,11 @@
 
   .pokemon_type_inner a {
       font-family: 'Exo 2', sans-serif;
+      font-family: 'Luckiest Guy', cursive;
   }
 
   .pokemon_type_inner a:hover {
-    color: white;
-    font-family: 'Exo 2', sans-serif;
+    color: #FCCE00;
     text-decoration: underline;
 }
 
