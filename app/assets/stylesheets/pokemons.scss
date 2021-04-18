@@ -34,6 +34,11 @@
 }
 
 /*Pokemon Manager Layout*/
+
+#pokemon_manager_mobile {
+  display: none;
+}
+
 .pokemon_manager {
     display: flex;
     flex-direction: row;
@@ -486,3 +491,40 @@ a, a:link, .pokemon_view_all_links {
     }
 
   
+
+  @media screen and (max-width: 825px) {
+
+    #pokemon_manager_mobile {
+      display: flex;
+      font-family: 'Luckiest Guy', cursive;
+      color: #19191b;
+      padding-top: 20px;
+      padding-bottom: 20;
+      font-size: 25;
+    }
+
+    #pokemon_manager_mobile:hover {
+      color: #FCCE00;
+      cursor: pointer;
+    }
+
+    #pokemon_manager_largescreens {
+      display: none;
+    }
+
+    .pokemon_manager {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .layout_divider {
+    display: none;
+  }
+
+  .pokemon_manager_link {
+    height: 30px;
+  }
+
+}

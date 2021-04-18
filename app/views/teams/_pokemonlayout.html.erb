@@ -1,14 +1,16 @@
-
-<div class="pokemon_manager">
-    <%= link_to "Capture Pokémon", pokemons_explore_path, id: "red-link" %>
-    <div>|</div>
-    <%= link_to "Hatch Pokémon", new_pokemon_path, id: "yellow-link" %>
-    <div>|</div>
-    <%= link_to "My Pokémon", pokemons_path, id: "green-link" %>
-    <div>|</div>
-    <%= link_to "Create Team", new_team_path, id: "aqua-link" %>
-    <div>|</div>
-    <%= link_to "View Teams", teams_path, id: "blue-link" %>
+<div id="pokemon_manager_mobile" class="pokemon_manager">
+Menu
+</div>
+<div class="pokemon_manager" id="pokemon_manager_largescreens">
+    <div class="pokemon_manager_link"><%= link_to "Capture Pokémon", pokemons_explore_path, id: "red-link" %></div>
+    <div class="layout_divider">|</div>
+    <div class="pokemon_manager_link"><%= link_to "Hatch Pokémon", new_pokemon_path, id: "yellow-link" %></div>
+    <div class="layout_divider">|</div>
+    <div class="pokemon_manager_link"><%= link_to "My Pokémon", pokemons_path, id: "green-link" %></div>
+    <div class="layout_divider">|</div>
+    <div class="pokemon_manager_link"><%= link_to "Create Team", new_team_path, id: "aqua-link" %></div>
+    <div class="layout_divider">|</div>
+    <div class="pokemon_manager_link"><%= link_to "View Teams", teams_path, id: "blue-link" %></div>
 </div>
 <div class="nav-divider">
       <div class="nav-divider-inner nav-divider-red"></div>
@@ -17,3 +19,5 @@
       <div class="nav-divider-inner nav-divider-aqua"></div>
       <div class="nav-divider-inner nav-divider-blue"></div>
     </div>
+
+    <%= javascript_pack_tag 'pokemonmenu', 'data-turbolinks-track': 'reload' %>
