@@ -1,0 +1,41 @@
+<%= render :partial => "users/userlayout" %>
+
+<div class="page_title">
+    <h1 class="h1_title">
+        <div class="forum_inner_post_title">
+            <div class="post_title_info"><%= @post.title %> <%= link_to "Edit Post", edit_post_path(@post), class: "edit_post_button" %> <%= link_to "Delete Post", @post, method: :delete, data: { confirm: "Are you sure you want to delete this post??" }, id: "delete_pokemon_id"%></div>
+            <div class="post_author_info"><%= link_to @post.user.name, user_path(@user) %></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page_content">
+    <div class="forum_original_post forum_post_individual forum_each_post">
+        <div class="forum_message"><%= @post.message %></div><div class="post_author_info"><%= link_to @post.user.name, user_path(@user) %></div>
+    </div>
+
+    <% @replies.each do |reply| %>
+        <div class="forum_original_post forum_post_individual forum_each_post">
+           <div class="forum_message"> <%= reply.message %></div>
+           <div class="post_author_info"> <%= link_to reply.user.name, user_path(@user) %></div>
+        </div>
+    <% end %>
+
+    <div class="page_content">
+    <%= form_with url: replies_path do |f| %>
+                <%= hidden_field :post_id, @post.id %>
+
+                <div class="capture_pokemon_entry">
+                    <%= f.label "Message:" %>
+                    <%= f.text_area :message %>
+                </div>
+
+                <div class="capture_pokemon_submit_container">
+                    <%= f.submit "Post Reply", class: "new_post_button" %>
+                </div>
+        <% end %>
+</div>
+
+</div>
+

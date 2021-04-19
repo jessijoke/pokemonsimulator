@@ -1,0 +1,49 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.new_post_button {
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 20px 0px 20px 0px;
+    background-color: #f3cc00;
+}
+
+.forum_inner_post_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.forum_post_individual {
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 10px 0px;
+    background-color: #cedbea;
+}
+
+.forum_content_size {
+    font-size: 25px;
+}
+
+.forum_posts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.forum_each_post {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a.edit_post_button {
+    font-size: 15px;
+}
+
+.forum_original_post {
+    width: 95%;
+}

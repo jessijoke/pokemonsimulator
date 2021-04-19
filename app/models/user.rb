@@ -7,6 +7,8 @@ class User < ApplicationRecord
     has_many :items, :through => :user_items
     has_many :friendships, dependent: :destroy
     has_many :friends, through: :friendships
+    has_many :posts
+    has_many :replies
     validates :password, confirmation: true
     validates :name, presence: true
     validates :email, presence: true, :uniqueness => {:scope => :email}

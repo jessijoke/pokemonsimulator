@@ -1,7 +1,14 @@
-<div class="pokemon_manager">
-    <%= link_to "User Search", search_path, id: "red-link" %>
-    <div>|</div>
-    <%= link_to "Friends", users_friends_path, id: "aqua-link" %>
+<div id="pokemon_manager_mobile" class="pokemon_manager">
+Menu
+</div>
+<div class="pokemon_manager" id="pokemon_manager_largescreens">
+    <div class="pokemon_manager_link"><%= link_to "User Search", search_path, id: "red-link" %></div>
+    <div class="layout_divider">|</div>
+    <div class="pokemon_manager_link"><%= link_to "Game", pages_game_path, id: "red-link" %></div>
+    <div class="layout_divider">|</div>
+    <div class="pokemon_manager_link"><%= link_to "Forum", posts_path, id: "red-link" %></div>
+    <div class="layout_divider">|</div>
+    <div class="pokemon_manager_link"><%= link_to "Friends", users_friends_path, id: "aqua-link" %></div>
 </div>
 <div class="nav-divider">
     <div class="nav-divider-inner nav-divider-red"></div>
@@ -10,3 +17,5 @@
     <div class="nav-divider-inner nav-divider-aqua"></div>
     <div class="nav-divider-inner nav-divider-blue"></div>
 </div>
+
+<%= javascript_pack_tag 'pokemonmenu', 'data-turbolinks-track': 'reload' %>

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :replies
   root to: 'pages#index'
   resources :stores
   resources :pokemon_teams
   resources :user_items
   resources :items
   resources :friendships
+  resources :posts
 
   #login and users
   get 'login', to: 'sessions#new'

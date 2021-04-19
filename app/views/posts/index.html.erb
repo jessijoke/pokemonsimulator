@@ -1,0 +1,27 @@
+<%= render :partial => "users/userlayout" %>
+
+<div class="page_title">
+    <h1 class="h1_title">
+        Forum
+    </div>
+</div>
+
+
+<div class="page_content">
+    <%= link_to "New Post", new_post_path, class: "new_post_button" %>
+
+    <div class="forum_posts">
+        <% @posts.each do |post| %>
+        <div class="forum_post_individual">
+            <div class="forum_each_post">
+                <div class="forum_post">Title:</div>
+                <div class="forum_author">Author:</div>
+            </div>
+            <div class="forum_each_post">
+                <div class="forum_post forum_content_size"><%= link_to post.title, post_path(post) %></div>
+                <div class="forum_author forum_content_size"><%= link_to post.user.name, post_path(post) %></div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>

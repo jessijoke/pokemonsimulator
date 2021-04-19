@@ -1,0 +1,28 @@
+<%= render :partial => "users/userlayout" %>
+
+<div class="page_title">
+    <h1 class="h1_title">
+        Forumn
+    </div>
+</div>
+
+
+<div class="page_content">
+    <%= form_with model: @post do |f| %>
+
+                <div class="capture_pokemon_entry">
+
+                    <%= f.label "Title:" %>
+                    <%= f.text_field :title %>
+                </div>
+
+                <div class="capture_pokemon_entry">
+                    <%= f.label "Message:" %>
+                    <%= f.text_area :message %>
+                </div>
+
+                <div class="capture_pokemon_submit_container">
+                    <%= f.submit "Create Post" %>
+                </div>
+        <% end %>
+</div>
