@@ -14,7 +14,7 @@ class StoresController < ApplicationController
         item_cost_params = params[:item_cost].keys[0].to_i
         quantity_params = params[:quantity].to_i
         item_id_params = params[:item_id].keys[0].to_i
-        if quantity_params = 0 || quantity_params = ""
+        if quantity_params == 0 || quantity_params == "" || quantity_params == nil 
             flash.now[:messages] = "Nice try."
             @items = Item.all
             render controller: 'stores', action: 'index'
