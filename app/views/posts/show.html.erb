@@ -18,7 +18,7 @@
     <% @replies.each do |reply| %>
         <div class="forum_original_post forum_post_individual forum_each_post">
            <div class="forum_message"> <%= reply.message %></div>
-           <div class="post_author_info"> <%= link_to reply.user.name, user_path(@user) %></div>
+           <div class="post_author_info"> <%= link_to reply.user.name, user_path(reply.user.id) %></div>
         </div>
     <% end %>
 
