@@ -24,10 +24,9 @@
 
     <div class="page_content">
     <%= form_with url: replies_path do |f| %>
-                <%= f.hidden_field :post_id, @post.id %>
-                <!-- save this for later
+                
                 <%= f.hidden_field :post_id, value: @post.id %>
-                -->
+                
 
                 <div class="capture_pokemon_entry">
                     <%= f.label "Message:" %>
