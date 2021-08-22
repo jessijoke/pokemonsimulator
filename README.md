@@ -1,24 +1,22 @@
-# README
+![Pokemon Simulator Website](pokemon-simulator-screenshot.png?raw=true "Pokemon Simulator")
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Pokemon Simulator
 
-Things you may want to cover:
+A social game with the ability to earn virtual currency, buy items, collect pokemon, chat, add friends, and play a game. Note: The whack-a-diglet game is contained in a separate repo.
 
-* Ruby version
+[View Live Frontend](https://pokemonsimulator.herokuapp.com/)
 
-* System dependencies
+[View a Demo of the Website](https://www.youtube.com/watch?v=n9fnJrin_lM&t=2s)
 
-* Configuration
+### Installation 
 
-* Database creation
+`bundle install` `rake db migrate`
 
-* Database initialization
+### Whack a Diglet Game
 
-* How to run the test suite
+[Whack a Diglet](https://github.com/jessijoke/whack-a-diglet)
+This game requires Adobe Animate CC to edit. [Animate](https://www.adobe.com/products/animate.html)
 
-* Services (job queues, cache servers, search engines, etc.)
+To view the code, select a frame that has an "A" on it, then go to window > actions and you'll be able to view and edit the javascript.
 
-* Deployment instructions
-
-* ...
+To export the game, go to Control > Test Movie, this will automatically compile your code and update all the local files, along with launching a server that connects to the CreateJS library so you can test your project.
