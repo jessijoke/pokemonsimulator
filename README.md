@@ -4,7 +4,7 @@
 
 A social game with the ability to earn virtual currency, buy items, collect pokemon, chat, add friends, and play a game. Note: The whack-a-diglet game is contained in a separate repo.
 
-[View Live Frontend](https://pokemonsimulator.herokuapp.com/)
+[View Live Site](https://pokemonsimulator.herokuapp.com/)
 
 [View a Demo of the Website](https://www.youtube.com/watch?v=n9fnJrin_lM&t=2s)
 
